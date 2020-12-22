@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using UPIBasedPaymentApp.ViewModel;
+using UPIBasedPaymentApp.Services.Abstractions;
+using UPIBasedPaymentApp.Services;
+using UPIBasedPaymentApp.Views.Authentication;
 
 namespace UPIBasedPaymentApp
 {
@@ -16,6 +19,7 @@ namespace UPIBasedPaymentApp
      **/
     public partial class App : PrismApplication
     {
+        IStorageService _PreferencesService;
         public App() : base(null) { }
         public App(IPlatformInitializer initializer = null) : base(initializer, setFormsDependencyResolver: true)
         {
@@ -24,11 +28,12 @@ namespace UPIBasedPaymentApp
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // Register Services
-            
+            containerRegistry.RegisterSingleton<IStorageService, PreferencesService>();
+
             // Register Navigation Pages + ViewModels
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
         }
 
         protected override async void OnInitialized()
@@ -38,15 +43,28 @@ namespace UPIBasedPaymentApp
             await SetMainPageAsync();
         }
 
+        /**
+         * Set the main page depending on if the user logged in before | not
+         **/
         private async Task SetMainPageAsync()
         {
-            var isFirstTimeLaunched = true;
+            // Resolve storage service
+            _PreferencesService = Container.Resolve<IStorageService>();
+
+            // Get if first time App launched
+            var isFirstTimeLaunched = await _PreferencesService.GetAsync<bool>(AppSettings.IsFirstTimeAppLaunched, AppSettings.IsFirstTimeAppLaunchedDefaultValue);
+            
             INavigationResult result = null;
             if (isFirstTimeLaunched)
             {
+                await _PreferencesService.SaveAsync(AppSettings.IsFirstTimeAppLaunched, false);
+                result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(LoginPage)}");
+            }
+            else
+            {
+                result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
             }
 
-            result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
 
             if (!result.Success)
             {
