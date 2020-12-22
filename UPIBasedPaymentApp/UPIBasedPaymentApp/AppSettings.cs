@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace UPIBasedPaymentApp
 {
+    /**
+     * Application configuration params values
+     **/
     public static class AppSettings
     {
         public const string IsFirstTimeAppLaunched = "IsFirstTimeAppLaunched";

@@ -10,6 +10,10 @@ using UPIBasedPaymentApp.ViewModel;
 
 namespace UPIBasedPaymentApp
 {
+
+    /**
+     * Application starting point
+     **/
     public partial class App : PrismApplication
     {
         public App() : base(null) { }
