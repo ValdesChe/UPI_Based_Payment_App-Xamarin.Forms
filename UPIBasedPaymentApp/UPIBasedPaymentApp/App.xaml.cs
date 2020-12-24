@@ -32,7 +32,7 @@ namespace UPIBasedPaymentApp
 
             // Register Navigation Pages + ViewModels
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
         }
 
@@ -62,7 +62,7 @@ namespace UPIBasedPaymentApp
             }
             else
             {
-                result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+                result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(HomePage)}");
             }
 
 

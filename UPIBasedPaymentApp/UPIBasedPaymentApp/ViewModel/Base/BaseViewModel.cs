@@ -4,6 +4,8 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace UPIBasedPaymentApp.ViewModel.Base
 {
@@ -22,6 +24,10 @@ namespace UPIBasedPaymentApp.ViewModel.Base
             set => SetProperty(ref _IsBusy, value);
         }
 
-
+        public async Task NavigateToHomePage()
+        {
+            NavigationParameters np = new NavigationParameters();
+            await _NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(HomePage)}");
+        }
     }
 }
