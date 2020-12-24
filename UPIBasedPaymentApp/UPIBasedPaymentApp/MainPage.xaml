@@ -12,6 +12,7 @@
         <Label Text="Main page" Style="{StaticResource MontserratRegularLabelStyle}"
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Entry Text="Nom " Style="{StaticResource EntryStyle}" Keyboard="Text" Placeholder="Nomedd" />
     </StackLayout>
 
 </ContentPage>

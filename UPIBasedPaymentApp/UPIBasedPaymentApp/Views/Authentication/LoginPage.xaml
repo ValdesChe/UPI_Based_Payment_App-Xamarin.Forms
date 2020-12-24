@@ -6,7 +6,51 @@
              mc:Ignorable="d"
              x:Class="UPIBasedPaymentApp.Views.Authentication.LoginPage"
              NavigationPage.HasNavigationBar="False">
-    <StackLayout>
-        <Label Text="Login Page" />
-    </StackLayout>
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+
+        <BoxView Grid.Row="0"
+                 Color="{StaticResource WhiteColor}" />
+        <Label Grid.Row="0" Grid.Column="0"
+               HorizontalOptions="Center"
+               Padding="0,50"
+               Text="UPI Based Payment App"
+               Style="{StaticResource HeaderBoldLabelStyle}"/>
+
+
+        <BoxView Grid.Row="1" Grid.RowSpan="2"
+                 Color="{StaticResource WhiteColor}" />
+        <StackLayout Grid.Row="1" Padding="20,0">
+
+            <StackLayout Padding="20,0">
+                <Label Text="LOGIN" Style="{StaticResource LoginLabelStyle}" />
+                <Entry Text="" Placeholder="Email or Phone number" Style="{StaticResource EntryStyle}"/>
+                <Entry Text="" Placeholder="Password" IsPassword="True" Style="{StaticResource EntryStyle}"/>
+            </StackLayout>
+            
+            <Label Text="Forgot password ?" HorizontalOptions="End" Padding="0,20" Style="{StaticResource MontserratBoldLabelStyle}" TextColor="{StaticResource BlueColor}"/>
+
+            <Button Text="Login" Style="{StaticResource LoginButtonStyle}" />
+        </StackLayout>
+
+        <BoxView Grid.Row="3"
+                 Color="{StaticResource BackgroundGrayColor}" />
+        <Label Grid.Row="3" Grid.Column="0"
+               HorizontalOptions="Center"
+               VerticalOptions="End"
+               Padding="0,40"
+               Text="By Login In, You agree our terms and privacy policy."
+               Style="{StaticResource MontserratRegularLabelStyle}"
+               FontSize="{StaticResource LittleSize}"/>
+
+    </Grid>
 </ContentPage>

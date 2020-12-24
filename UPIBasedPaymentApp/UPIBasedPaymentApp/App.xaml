@@ -8,11 +8,12 @@
             <!-- Colors -->
             <Color x:Key="WhiteColor">#ffffff</Color>
             <Color x:Key="TransparentWhiteColor">#BFffffff</Color>
-            <Color x:Key="BlueColor">#3063f5</Color>
+            <Color x:Key="BlueColor">#3FA9F5</Color>
             <Color x:Key="TransparentBlueColor">#9ee9f5</Color>
             <Color x:Key="GrayColor">#484f63</Color>
             <Color x:Key="ErrorColor">#ff5252</Color>
             <Color x:Key="BackgroundGrayColor">#f4f6fa</Color>
+            <Color x:Key="ProfileGrayColor">#afb3be</Color>
             <Color x:Key="BlackColor">#000000</Color>
             <Color x:Key="GreenColor">#4cd137</Color>
 
@@ -38,23 +39,34 @@
                         Android="16"
                         WinPhone="16"/>
 
-            <OnPlatform x:Key="LargeSize"
-                        x:TypeArguments="x:Double"
-                        iOS="16"
-                        Android="18"
-                        WinPhone="18"/>
-            
             <OnPlatform x:Key="LargerSize"
                         x:TypeArguments="x:Double"
                         iOS="18"
                         Android="20"
                         WinPhone="20"/>
-            
-            
+
+            <OnPlatform x:Key="BigSize"
+                        x:TypeArguments="x:Double"
+                        iOS="20"
+                        Android="24"
+                        WinPhone="24"/>
+
+            <OnPlatform x:Key="ExtraBigSize"
+                      x:TypeArguments="x:Double"
+                      iOS="24"
+                      Android="32"
+                      WinPhone="32"/>
+
+            <OnPlatform x:Key="HugeSize"
+                        x:TypeArguments="x:Double"
+                        iOS="30"
+                        Android="40"
+                        WinPhone="40"/>
+
             <!-- Styles -->
             <Style x:Key="BaseLabelStyle" TargetType="{x:Type Label}">
                 <Setter Property="LineBreakMode"
-                        Value="TailTruncation" />
+                        Value="NoWrap" />
             </Style>
 
             <Style TargetType="{x:Type Label}"
@@ -73,7 +85,87 @@
                 <Setter Property="FontFamily"
                         Value="{StaticResource MontserratBold}" />
             </Style>
+
+            <Style x:Key="HeaderBoldLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource MontserratBold}" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource BlueColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource BigSize}" />
+            </Style>
+
+            <Style x:Key="LoginLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource MontserratRegularLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource BlueColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource HugeSize}" />
+            </Style>
             
+            <Style x:Key="EventNameLabelStyle"  
+                   TargetType="{x:Type Label}"   
+                   BasedOn="{StaticResource MontserratRegularLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource BlueColor}" />
+                <Setter Property="FontSize" 
+                        Value="{StaticResource MediumSize}" />
+            </Style>
+
+            <!-- Entry Style -->
+            <Style x:Key="EntryStyle"
+                   TargetType="{x:Type Entry}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource MontserratRegular}" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource BlackColor}" />
+                <Setter Property="PlaceholderColor"
+                        Value="{StaticResource GrayColor}" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+                <Setter Property="Opacity"
+                        Value="0.6" />
+                <Style.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused" 
+                             Value="True">
+                        <Setter Property="Opacity" Value="1" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Button Style -->
+            <Style x:Key="BaseButtonStyle"
+                   TargetType="{x:Type Button}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource MontserratRegular}" />
+                <Setter Property="CornerRadius"
+                        Value="50" />
+            </Style>
+
+            <Style x:Key="LoginButtonStyle"
+                   BasedOn="{StaticResource BaseButtonStyle}"
+                   TargetType="{x:Type Button}">
+                <Setter Property="Padding"
+                        Value="0,10" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource WhiteColor}" />
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource BlueColor}" />
+            </Style>
+
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>
