@@ -6,13 +6,61 @@
              mc:Ignorable="d"
              x:Class="UPIBasedPaymentApp.HomePage"
              NavigationPage.HasNavigationBar="False">
+    <Grid BackgroundColor="{StaticResource BackgroundGrayColor}">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Main page" Style="{StaticResource MontserratRegularLabelStyle}"
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <Entry Text="Nom " Style="{StaticResource EntryStyle}" Keyboard="Text" Placeholder="Nomedd" />
-    </StackLayout>
+        <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+            <Frame HeightRequest="200" BackgroundColor="HotPink" Padding="0" Margin="0">
+                <Image Source="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg" Aspect="AspectFill" Margin="0"/>
+            </Frame>
+        </StackLayout>
+        
+        <StackLayout Padding="0" Margin="0,10,0,15" HorizontalOptions="FillAndExpand">
+            <Label
+               HorizontalOptions="Center"
+               Padding="0"
+               TextColor="{StaticResource WhiteColor}"
+                Style="{StaticResource HeaderBoldLabelStyle}"
+            Text="UPI Based" />
+            <Label
+               HorizontalOptions="Center"
+               Padding="0"
+               TextColor="{StaticResource WhiteColor}"
+               Style="{StaticResource HeaderBoldLabelStyle}"
+               Text="Payment App" />
+        </StackLayout>
+
+        <Grid Padding="0" RowSpacing="30" Margin="10,150,10,50" HorizontalOptions="FillAndExpand">
+
+            <!-- Form -->
+            <Frame Grid.Row="0" Grid.RowSpan="5"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                BackgroundColor="{StaticResource WhiteColor}"
+                CornerRadius="20" HasShadow="True"
+                Padding="0">
+                <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                    <Image Source="Resources\Icons\qr-code.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" Margin="0"/>
+                    <Label Text="Accept payment" 
+                           HorizontalOptions="Center"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LargerSize}"  
+                           TextColor="{StaticResource BlackColor}" />
+                    
+                </StackLayout>
+            </Frame>
+            
+            <FlexLayout Grid.Row="5" Grid.RowSpan="2" AlignContent="SpaceBetween" HorizontalOptions="FillAndExpand" >
+                <Frame>
+                    <Label Text="1" Style="{StaticResource LoginLabelStyle}" />
+                </Frame>
+                <Frame>
+                    <Label Text="2" Style="{StaticResource LoginLabelStyle}" />
+                </Frame>
+                <Frame>
+                    <Label Text="3" Style="{StaticResource LoginLabelStyle}" />
+                </Frame>
+            </FlexLayout>
+        </Grid>
+    </Grid>
 
 </ContentPage>

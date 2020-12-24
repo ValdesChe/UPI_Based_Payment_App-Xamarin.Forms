@@ -13,11 +13,13 @@
   <ItemGroup>
     <None Remove="Resources\Fonts\Montserrat-Bold.ttf" />
     <None Remove="Resources\Fonts\SourceSansPro-Regular.ttf" />
+    <None Remove="Resources\Icons\qr-code.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\Montserrat-Bold.ttf" />
     <EmbeddedResource Include="Resources\Fonts\SourceSansPro-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Icons\qr-code.png" />
   </ItemGroup>
 
   <ItemGroup>

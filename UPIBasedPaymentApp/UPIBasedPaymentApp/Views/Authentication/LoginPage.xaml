@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="UPIBasedPaymentApp.Views.Authentication.LoginPage"
              NavigationPage.HasNavigationBar="False">
-    <Grid RowSpacing="0">
+    <Grid RowSpacing="0" BackgroundColor="{StaticResource WhiteColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -17,18 +17,14 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-
-        <BoxView Grid.Row="0"
-                 Color="{StaticResource WhiteColor}" />
         <Label Grid.Row="0" Grid.Column="0"
                HorizontalOptions="Center"
                Padding="0,50"
                Text="UPI Based Payment App"
+               TextColor="{StaticResource BlueColor}"
                Style="{StaticResource HeaderBoldLabelStyle}"/>
 
-        <BoxView Grid.Row="1" 
-                 Color="{StaticResource WhiteColor}" />
-        <StackLayout Grid.Row="1" Grid.RowSpan="2" Padding="20,0">
+        <StackLayout Grid.Row="1" Grid.RowSpan="2" Padding="20,0" >
 
             <StackLayout Padding="20,0">
                 <Label Text="LOGIN" Style="{StaticResource LoginLabelStyle}" />

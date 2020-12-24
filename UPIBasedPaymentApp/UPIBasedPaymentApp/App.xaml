@@ -92,9 +92,9 @@
                 <Setter Property="FontFamily"
                         Value="{StaticResource MontserratBold}" />
                 <Setter Property="TextColor"
-                        Value="{StaticResource BlueColor}" />
+                        Value="{StaticResource WhiteColor}" />
                 <Setter Property="FontSize"
-                        Value="{StaticResource BigSize}" />
+                        Value="{StaticResource ExtraBigSize}" />
             </Style>
 
             <Style x:Key="LoginLabelStyle"
