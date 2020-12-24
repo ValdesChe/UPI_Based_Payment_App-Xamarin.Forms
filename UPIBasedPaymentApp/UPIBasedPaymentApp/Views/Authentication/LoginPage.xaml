@@ -33,8 +33,8 @@
 
             <StackLayout Padding="20,0">
                 <Label Text="LOGIN" Style="{StaticResource LoginLabelStyle}" />
-                <Entry Text="" Placeholder="Email or Phone number" Style="{StaticResource EntryStyle}"/>
-                <Entry Text="" Placeholder="Password" IsPassword="True" Style="{StaticResource EntryStyle}"/>
+                <Entry Text="" Placeholder="Email or Phone number" Style="{StaticResource LoginFormEntryStyle}"/>
+                <Entry Text="" Placeholder="Password" IsPassword="True" Style="{StaticResource LoginFormEntryStyle}"/>
             </StackLayout>
             
             <Label Text="Forgot password ?" HorizontalOptions="End" Padding="0,20" Style="{StaticResource MontserratBoldLabelStyle}" TextColor="{StaticResource BlueColor}"/>
@@ -48,7 +48,7 @@
                HorizontalOptions="Center"
                VerticalOptions="End"
                Padding="0,40"
-               Text="By Login In, You agree our terms and privacy policy."
+               Text="By Login in, You agree our Terms and Privacy Policy."
                Style="{StaticResource MontserratRegularLabelStyle}"
                FontSize="{StaticResource LittleSize}"/>
 
