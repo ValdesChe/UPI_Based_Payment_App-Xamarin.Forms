@@ -26,10 +26,9 @@
                Text="UPI Based Payment App"
                Style="{StaticResource HeaderBoldLabelStyle}"/>
 
-
-        <BoxView Grid.Row="1" Grid.RowSpan="2"
+        <BoxView Grid.Row="1" 
                  Color="{StaticResource WhiteColor}" />
-        <StackLayout Grid.Row="1" Padding="20,0">
+        <StackLayout Grid.Row="1" Grid.RowSpan="2" Padding="20,0">
 
             <StackLayout Padding="20,0">
                 <Label Text="LOGIN" Style="{StaticResource LoginLabelStyle}" />
@@ -39,7 +38,7 @@
             
             <Label Text="Forgot password ?" HorizontalOptions="End" Padding="0,20" Style="{StaticResource MontserratBoldLabelStyle}" TextColor="{StaticResource BlueColor}"/>
 
-            <Button Text="Login" Style="{StaticResource LoginButtonStyle}" />
+            <Button Text="Login"  Command="{Binding LoginCommand}"  Style="{StaticResource LoginButtonStyle}" />
         </StackLayout>
 
         <BoxView Grid.Row="3"

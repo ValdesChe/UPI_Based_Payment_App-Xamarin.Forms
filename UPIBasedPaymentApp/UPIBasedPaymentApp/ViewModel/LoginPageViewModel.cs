@@ -12,11 +12,11 @@ namespace UPIBasedPaymentApp.ViewModel
     {
         public LoginPageViewModel(INavigationService navigationService): base(navigationService)
         {
-            LoginActionCommand = new DelegateCommand(LoginActionCommandExecute, () => !IsBusy);
+            LoginCommand = new DelegateCommand(LoginCommandExecute);
         }
 
 
-        private void LoginActionCommandExecute()
+        private void LoginCommandExecute()
         {
             IsBusy = true;
             GoToHomePage();
@@ -28,8 +28,16 @@ namespace UPIBasedPaymentApp.ViewModel
             await NavigateToHomePage();
         }
 
+
+        #region CanExecute Methods
+        bool CanLogin()
+        {
+            return !IsBusy;
+        }
+        #endregion
+
         #region Commands
-        public DelegateCommand LoginActionCommand { get; set; }
+        public DelegateCommand LoginCommand { get; private set; }
         #endregion
     }
 }
