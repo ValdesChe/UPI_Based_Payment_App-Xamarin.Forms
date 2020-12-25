@@ -5,12 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="UPIBasedPaymentApp.HomePage"
+             xmlns:local="clr-namespace:UPIBasedPaymentApp.Extensions"
              NavigationPage.HasNavigationBar="False">
     <Grid BackgroundColor="{StaticResource BackgroundGrayColor}">
 
         <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
-            <Frame HeightRequest="200" BackgroundColor="HotPink" Padding="0" Margin="0">
-                <Image Source="https://images.pexels.com/photos/247431/pexels-photo-247431.jpeg" Aspect="AspectFill" Margin="0"/>
+            <Frame HeightRequest="200" BackgroundColor="{StaticResource BlueColor}" Padding="0" Margin="0">
+                
             </Frame>
         </StackLayout>
         
@@ -38,14 +39,74 @@
                 BackgroundColor="{StaticResource WhiteColor}"
                 CornerRadius="20" HasShadow="True"
                 Padding="0">
-                <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
-                    <Image Source="Resources\Icons\qr-code.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFill" Margin="0"/>
+                <StackLayout Padding="30,10" Margin="0" HorizontalOptions="FillAndExpand">
+                    <Image x:Name="resourceImage" Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.Qrcode.png}" HeightRequest="50" WidthRequest="50" Margin="0,20,0,0"/>
                     <Label Text="Accept payment" 
                            HorizontalOptions="Center"
+                           Margin="0, 5, 0, 20"
                            Style="{StaticResource MontserratBoldLabelStyle}"
                            FontSize="{StaticResource LargerSize}"  
                            TextColor="{StaticResource BlackColor}" />
                     
+                    <Label Text="Enter amount" 
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource BlueColor}" />
+
+                    <Entry Text="" Placeholder="€ 10" Keyboard="Numeric" />
+                   
+                    <Grid RowSpacing="0" Margin="0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="25" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Amount -->
+                        <Label Text="Enter amount" Grid.Column="0" Grid.Row="0"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource BlueColor}" />
+                        <Label Text="100 £" Grid.Column="0" Grid.Row="1"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LargerSize}"  
+                           TextColor="{StaticResource BlackColor}" />
+
+                        <!-- Conversion Rate -->
+                        <Label Text="Conversion Rate" Grid.Column="1" Grid.Row="0"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource BlueColor}" />
+                        <Label Text="10 £" Grid.Column="1" Grid.Row="1"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LargerSize}"  
+                           TextColor="{StaticResource BlackColor}" />
+
+                        <!-- Fee Amount  -->
+                        <Label Text="Fee Amount" Grid.Column="2" Grid.Row="0"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource BlueColor}" />
+                        <Label Text="10 £" Grid.Column="2" Grid.Row="1"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LargerSize}"  
+                           TextColor="{StaticResource BlackColor}" />
+
+                    </Grid>
+
+                    <Button Text="GENERATE QR CODE" Style="{StaticResource LoginButtonStyle}" Margin="0,40" />
+
                 </StackLayout>
             </Frame>
             

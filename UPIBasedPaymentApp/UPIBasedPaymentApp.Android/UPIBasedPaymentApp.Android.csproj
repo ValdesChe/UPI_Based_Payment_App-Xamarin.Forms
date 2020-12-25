@@ -85,7 +85,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Qrcode.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UPIBasedPaymentApp\UPIBasedPaymentApp.csproj">
       <Project>{F6BC064E-52EF-4602-A5A1-DCD5AC8F97A9}</Project>

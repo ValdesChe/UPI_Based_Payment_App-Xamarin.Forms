@@ -16,6 +16,7 @@ namespace UPIBasedPaymentApp
         public HomePage()
         {
             InitializeComponent();
+            // resourceImage.Source = ImageSource.FromResource("UPIBasedPaymentApp.Resources.Icons.Qrcode.png");
         }
     }
 }
