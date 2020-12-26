@@ -15,7 +15,10 @@
     <None Remove="Resources\Fonts\SourceSansPro-Regular.ttf" />
     <None Remove="Resources\Icons\bankAccount.png" />
     <None Remove="Resources\Icons\batchReport.png" />
+    <None Remove="Resources\Icons\home.png" />
+    <None Remove="Resources\Icons\notification.png" />
     <None Remove="Resources\Icons\paymentReceived.png" />
+    <None Remove="Resources\Icons\settings.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,10 +26,13 @@
     <EmbeddedResource Include="Resources\Fonts\SourceSansPro-Regular.ttf" />
     <EmbeddedResource Include="Resources\Icons\bankAccount.png" />
     <EmbeddedResource Include="Resources\Icons\batchReport.png" />
+    <EmbeddedResource Include="Resources\Icons\home.png" />
+    <EmbeddedResource Include="Resources\Icons\notification.png" />
     <EmbeddedResource Include="Resources\Icons\paymentReceived.png" />
     <EmbeddedResource Include="Resources\Icons\qrcode.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Icons\settings.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +49,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\Authentication\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Page\MainHomePageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

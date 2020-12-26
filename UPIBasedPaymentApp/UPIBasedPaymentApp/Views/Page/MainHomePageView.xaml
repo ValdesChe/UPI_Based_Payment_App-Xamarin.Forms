@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             xmlns:base="clr-namespace:UPIBasedPaymentApp.Views.Page"
+             xmlns:local="clr-namespace:UPIBasedPaymentApp.Extensions"
+             x:Class="UPIBasedPaymentApp.Views.Page.MainHomePageView">
+    <Grid BackgroundColor="{StaticResource BackgroundGrayColor}">
+
+        <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+            <Frame HeightRequest="200" BackgroundColor="{StaticResource BlueColor}" Padding="0" Margin="0">
+
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Padding="0" Margin="0,10,0,15" HorizontalOptions="FillAndExpand">
+            <Label
+               HorizontalOptions="Center"
+               Padding="0"
+               TextColor="{StaticResource WhiteColor}"
+                Style="{StaticResource HeaderBoldLabelStyle}"
+            Text="UPI Based" />
+            <Label
+               HorizontalOptions="Center"
+               Padding="0"
+               TextColor="{StaticResource WhiteColor}"
+               Style="{StaticResource HeaderBoldLabelStyle}"
+               Text="Payment App" />
+        </StackLayout>
+
+        <Grid Padding="0" RowSpacing="30" Margin="15,150,15,30" HorizontalOptions="FillAndExpand">
+
+            <!-- Form -->
+            <Frame Grid.Row="0" Grid.RowSpan="5"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                BackgroundColor="{StaticResource WhiteColor}"
+                CornerRadius="20" HasShadow="True"
+                Padding="0">
+                <StackLayout Padding="30,10" Margin="0" HorizontalOptions="FillAndExpand">
+                    <Image Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.qrcode.png}" HeightRequest="50" WidthRequest="50" Margin="0,20,0,0"/>
+                    <Label Text="Accept payment" 
+                           HorizontalOptions="Center"
+                           Margin="0, 5, 0, 20"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LargerSize}"  
+                           TextColor="{StaticResource BlackColor}" />
+
+                    <Label Text="Enter amount" 
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource BlueColor}" />
+
+                    <Entry Text="" Placeholder="€ 10" Keyboard="Numeric" />
+
+                    <Grid RowSpacing="0" Margin="0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="25" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Amount -->
+                        <Label Text="Enter amount" Grid.Column="0" Grid.Row="0"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource BlueColor}" />
+                        <Label Text="100 £" Grid.Column="0" Grid.Row="1"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LargerSize}"  
+                           TextColor="{StaticResource BlackColor}" />
+
+                        <!-- Conversion Rate -->
+                        <Label Text="Conversion Rate" Grid.Column="1" Grid.Row="0"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource BlueColor}" />
+                        <Label Text="10 £" Grid.Column="1" Grid.Row="1"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LargerSize}"  
+                           TextColor="{StaticResource BlackColor}" />
+
+                        <!-- Fee Amount  -->
+                        <Label Text="Fee Amount" Grid.Column="2" Grid.Row="0"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource BlueColor}" />
+                        <Label Text="10 £" Grid.Column="2" Grid.Row="1"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LargerSize}"  
+                           TextColor="{StaticResource BlackColor}" />
+
+                    </Grid>
+
+                    <Button Text="GENERATE QR CODE" Style="{StaticResource LoginButtonStyle}" Margin="0,40" />
+
+                </StackLayout>
+            </Frame>
+
+            <Grid Grid.Row="5" Grid.RowSpan="2" ColumnSpacing="15" HorizontalOptions="FillAndExpand" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Frame Grid.Column="0" CornerRadius="20">
+                    <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                        <Image Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.batchReport.png}" HeightRequest="60" WidthRequest="60" Margin="0,0,0,0"/>
+
+                        <Label Text="Batch Report" HorizontalTextAlignment="Center"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}" 
+                           LineBreakMode="WordWrap" Margin="0,15,0,0"
+                           TextColor="{StaticResource BlackColor}" />
+
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Column="1"  CornerRadius="20">
+                    <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                        <Image Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.paymentReceived.png}" HeightRequest="60" WidthRequest="60" Margin="0,0,0,0"/>
+
+                        <Label Text="Payment Received" HorizontalTextAlignment="Center"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}" 
+                           LineBreakMode="WordWrap" Margin="0,15,0,0"
+                           TextColor="{StaticResource BlackColor}" />
+
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Column="2"  CornerRadius="20">
+                    <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                        <Image Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.bankAccount.png}" HeightRequest="60" WidthRequest="60" Margin="0,0,0,0"/>
+
+                        <Label Text="Bank Account" HorizontalTextAlignment="Center"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}" 
+                           LineBreakMode="WordWrap" Margin="0,15,0,0"
+                           TextColor="{StaticResource BlackColor}" />
+
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </Grid>
+    </Grid>
+</base:BaseContentPage>
