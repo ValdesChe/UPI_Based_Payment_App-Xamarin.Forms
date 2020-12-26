@@ -30,7 +30,7 @@
                Text="Payment App" />
         </StackLayout>
 
-        <Grid Padding="0" RowSpacing="30" Margin="10,150,10,50" HorizontalOptions="FillAndExpand">
+        <Grid Padding="0" RowSpacing="30" Margin="15,150,15,50" HorizontalOptions="FillAndExpand">
 
             <!-- Form -->
             <Frame Grid.Row="0" Grid.RowSpan="5"
@@ -40,7 +40,7 @@
                 CornerRadius="20" HasShadow="True"
                 Padding="0">
                 <StackLayout Padding="30,10" Margin="0" HorizontalOptions="FillAndExpand">
-                    <Image x:Name="resourceImage" Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.Qrcode.png}" HeightRequest="50" WidthRequest="50" Margin="0,20,0,0"/>
+                    <Image Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.qrcode.png}" HeightRequest="50" WidthRequest="50" Margin="0,20,0,0"/>
                     <Label Text="Accept payment" 
                            HorizontalOptions="Center"
                            Margin="0, 5, 0, 20"
@@ -110,17 +110,53 @@
                 </StackLayout>
             </Frame>
             
-            <FlexLayout Grid.Row="5" Grid.RowSpan="2" AlignContent="SpaceBetween" HorizontalOptions="FillAndExpand" >
-                <Frame>
-                    <Label Text="1" Style="{StaticResource LoginLabelStyle}" />
+            <Grid Grid.Row="5" Grid.RowSpan="2" ColumnSpacing="15" HorizontalOptions="FillAndExpand" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Frame Grid.Column="0" CornerRadius="20">
+                    <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                        <Image Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.batchReport.png}" HeightRequest="60" WidthRequest="60" Margin="0,0,0,0"/>
+
+                        <Label Text="Batch Report" HorizontalTextAlignment="Center"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}" 
+                           LineBreakMode="WordWrap" Margin="0,15,0,0"
+                           TextColor="{StaticResource BlackColor}" />
+                        
+                    </StackLayout>
                 </Frame>
-                <Frame>
-                    <Label Text="2" Style="{StaticResource LoginLabelStyle}" />
+                <Frame Grid.Column="1"  CornerRadius="20">
+                    <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                        <Image Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.paymentReceived.png}" HeightRequest="60" WidthRequest="60" Margin="0,0,0,0"/>
+
+                        <Label Text="Payment Received" HorizontalTextAlignment="Center"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}" 
+                           LineBreakMode="WordWrap" Margin="0,15,0,0"
+                           TextColor="{StaticResource BlackColor}" />
+
+                    </StackLayout>
                 </Frame>
-                <Frame>
-                    <Label Text="3" Style="{StaticResource LoginLabelStyle}" />
+                
+                <Frame Grid.Column="2"  CornerRadius="20">
+                    <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                        <Image Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.bankAccount.png}" HeightRequest="60" WidthRequest="60" Margin="0,0,0,0"/>
+
+                        <Label Text="Bank Account" HorizontalTextAlignment="Center"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}" 
+                           LineBreakMode="WordWrap" Margin="0,15,0,0"
+                           TextColor="{StaticResource BlackColor}" />
+
+                    </StackLayout>
                 </Frame>
-            </FlexLayout>
+            </Grid>
         </Grid>
     </Grid>
 

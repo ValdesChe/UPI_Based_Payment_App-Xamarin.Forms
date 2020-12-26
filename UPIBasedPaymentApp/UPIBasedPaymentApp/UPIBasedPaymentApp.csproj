@@ -13,12 +13,18 @@
   <ItemGroup>
     <None Remove="Resources\Fonts\Montserrat-Bold.ttf" />
     <None Remove="Resources\Fonts\SourceSansPro-Regular.ttf" />
+    <None Remove="Resources\Icons\bankAccount.png" />
+    <None Remove="Resources\Icons\batchReport.png" />
+    <None Remove="Resources\Icons\paymentReceived.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\Montserrat-Bold.ttf" />
     <EmbeddedResource Include="Resources\Fonts\SourceSansPro-Regular.ttf" />
-    <EmbeddedResource Include="Resources\Icons\Qrcode.png">
+    <EmbeddedResource Include="Resources\Icons\bankAccount.png" />
+    <EmbeddedResource Include="Resources\Icons\batchReport.png" />
+    <EmbeddedResource Include="Resources\Icons\paymentReceived.png" />
+    <EmbeddedResource Include="Resources\Icons\qrcode.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
