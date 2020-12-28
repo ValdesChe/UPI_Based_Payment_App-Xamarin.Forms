@@ -8,9 +8,9 @@ using UPIBasedPaymentApp.ViewModel.Base;
 
 namespace UPIBasedPaymentApp.ViewModel
 {
-    public class MainPageViewModel : BaseViewModel
+    public class TabbedMainPageViewModel : BaseViewModel
     {
-        public MainPageViewModel(INavigationService navigationService):base(navigationService)
+        public TabbedMainPageViewModel(INavigationService navigationService):base(navigationService)
         {
 
         }

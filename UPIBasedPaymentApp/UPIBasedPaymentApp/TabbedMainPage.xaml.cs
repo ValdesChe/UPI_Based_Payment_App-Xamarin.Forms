@@ -4,12 +4,12 @@ using Xamarin.Forms;
 namespace UPIBasedPaymentApp
 {
 
-    public partial class MainPage : TabbedPage
+    public partial class TabbedMainPage : TabbedPage
     {
         private NavigationPage _notificationPage;
         private NavigationPage _homePage;
 
-        public MainPage()
+        public TabbedMainPage()
         {
             NavigationPage.SetHasNavigationBar(this, false);
             _notificationPage = new NavigationPage(new NotificationPage())

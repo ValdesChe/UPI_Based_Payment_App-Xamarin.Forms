@@ -42,8 +42,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Update="TabbedMainPage.xaml.cs">
+      <DependentUpon>TabbedMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Page\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>

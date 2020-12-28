@@ -34,7 +34,7 @@ namespace UPIBasedPaymentApp
 
             // Register Navigation Pages + ViewModels
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabbedMainPage, TabbedMainPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
 
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
@@ -64,12 +64,12 @@ namespace UPIBasedPaymentApp
             {
                 await _PreferencesService.SaveAsync(AppSettings.IsFirstTimeAppLaunched, false);
                 // Current.MainPage = new LoginPage();
-                result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(LoginPage)}");
+                result = await NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(LoginPage)}");
             }
             else
             {
                 // Current.MainPage = new HomePage();
-                result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+                result = await NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}");
             }
 
             if (!result.Success)
