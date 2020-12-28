@@ -25,7 +25,7 @@ namespace UPIBasedPaymentApp.ViewModel
 
         private async void GoToHomePage()
         {
-            await NavigateToHomePage();
+            await NavigateToMainPage();
         }
 
 

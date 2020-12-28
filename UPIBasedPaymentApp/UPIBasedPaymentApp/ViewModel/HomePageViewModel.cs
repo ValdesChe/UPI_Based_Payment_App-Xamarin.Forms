@@ -1,9 +1,6 @@
 ﻿using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using UPIBasedPaymentApp.ViewModel.Base;
 
 namespace UPIBasedPaymentApp.ViewModel
@@ -12,7 +9,24 @@ namespace UPIBasedPaymentApp.ViewModel
     {
         public HomePageViewModel(INavigationService navigationService):base(navigationService)
         {
+            GenerateQrCodeCommand = new DelegateCommand(GenerateQrCodeCommandExecute);
+        }
 
+        private void GenerateQrCodeCommandExecute()
+        {
+            IsBusy = true;
+            GoToGenerateQrCodePage();
+            IsBusy = false;        
+        }
+
+        private async void GoToGenerateQrCodePage()
+        {
+            await NavigateToGenerateQrCodePage();
+        }
+
+        public DelegateCommand GenerateQrCodeCommand
+        {
+            get; private set;
         }
     }
 }

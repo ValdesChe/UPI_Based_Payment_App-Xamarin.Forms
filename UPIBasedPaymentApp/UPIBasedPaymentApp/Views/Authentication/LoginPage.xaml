@@ -34,7 +34,7 @@
             
             <Label Text="Forgot password ?" HorizontalOptions="End" Padding="0,20" Style="{StaticResource MontserratBoldLabelStyle}" TextColor="{StaticResource BlueColor}"/>
 
-            <Button Text="Login"  Command="{Binding LoginCommand}"  Style="{StaticResource LoginButtonStyle}" />
+            <Button Text="Login" Command="{Binding LoginCommand}"  Style="{StaticResource LoginButtonStyle}" />
         </StackLayout>
 
         <BoxView Grid.Row="3"

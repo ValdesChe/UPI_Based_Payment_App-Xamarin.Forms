@@ -34,10 +34,11 @@ namespace UPIBasedPaymentApp
 
             // Register Navigation Pages + ViewModels
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+
+            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<GenerateCodePage, GenerateCodePageViewModel>();
-            containerRegistry.RegisterForNavigation<MainHomePageView, MainHomePageViewModel>();
         }
 
         protected override async void OnInitialized()
@@ -62,13 +63,14 @@ namespace UPIBasedPaymentApp
             if (isFirstTimeLaunched)
             {
                 await _PreferencesService.SaveAsync(AppSettings.IsFirstTimeAppLaunched, false);
+                // Current.MainPage = new LoginPage();
                 result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(LoginPage)}");
             }
             else
             {
-                result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(HomePage)}");
+                // Current.MainPage = new HomePage();
+                result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
             }
-
 
             if (!result.Success)
             {

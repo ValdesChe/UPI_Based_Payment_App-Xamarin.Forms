@@ -1,12 +1,12 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace UPIBasedPaymentApp.Views
+namespace UPIBasedPaymentApp.Views.Page
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class GenerateCodePage : ContentPage
+    public partial class NotificationPage : BaseContentPage
     {
-        public GenerateCodePage()
+        public NotificationPage()
         {
             InitializeComponent();
         }

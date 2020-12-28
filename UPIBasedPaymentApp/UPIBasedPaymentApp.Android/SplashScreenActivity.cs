@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace UPIBasedPaymentApp.Droid
 {
-    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
+    [Activity(Theme = "@style/MainTheme.Splash", MainLauncher = true, NoHistory = true)]
     public class SplashScreenActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

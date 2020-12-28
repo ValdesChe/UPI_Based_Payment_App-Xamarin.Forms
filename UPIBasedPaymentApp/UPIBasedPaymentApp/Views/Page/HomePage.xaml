@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<pages:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" 
-             xmlns:base="clr-namespace:UPIBasedPaymentApp.Views.Page"
+             mc:Ignorable="d"
              xmlns:local="clr-namespace:UPIBasedPaymentApp.Extensions"
-             x:Class="UPIBasedPaymentApp.Views.Page.MainHomePageView">
+             xmlns:pages="clr-namespace:UPIBasedPaymentApp.Views"
+             x:Class="UPIBasedPaymentApp.Views.Page.HomePage"
+             NavigationPage.HasNavigationBar="False">
     <Grid BackgroundColor="{StaticResource BackgroundGrayColor}">
 
         <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
@@ -108,7 +109,7 @@
 
                     </Grid>
 
-                    <Button Text="GENERATE QR CODE" Style="{StaticResource LoginButtonStyle}" Margin="0,40" />
+                    <Button Text="GENERATE QR CODE" Command="{Binding GenerateQrCodeCommand}" Style="{StaticResource LoginButtonStyle}" Margin="0,20" />
 
                 </StackLayout>
             </Frame>
@@ -131,7 +132,7 @@
                         <Label Text="Batch Report" HorizontalTextAlignment="Center"
                            Style="{StaticResource MontserratBoldLabelStyle}"
                            FontSize="{StaticResource LittleSize}" 
-                           LineBreakMode="WordWrap" Margin="0,15,0,0"
+                           LineBreakMode="WordWrap" Margin="0,5,0,0"
                            TextColor="{StaticResource BlackColor}" />
 
                     </StackLayout>
@@ -146,7 +147,7 @@
                         <Label Text="Payment Received" HorizontalTextAlignment="Center"
                            Style="{StaticResource MontserratBoldLabelStyle}"
                            FontSize="{StaticResource LittleSize}" 
-                           LineBreakMode="WordWrap" Margin="0,15,0,0"
+                           LineBreakMode="WordWrap" Margin="0,5,0,0"
                            TextColor="{StaticResource BlackColor}" />
 
                     </StackLayout>
@@ -162,7 +163,7 @@
                         <Label Text="Bank Account" HorizontalTextAlignment="Center"
                            Style="{StaticResource MontserratBoldLabelStyle}"
                            FontSize="{StaticResource LittleSize}" 
-                           LineBreakMode="WordWrap" Margin="0,15,0,0"
+                           LineBreakMode="WordWrap" Margin="0,5,0,0"
                            TextColor="{StaticResource BlackColor}" />
 
                     </StackLayout>
@@ -170,4 +171,4 @@
             </Grid>
         </Grid>
     </Grid>
-</base:BaseContentPage>
+</pages:BaseContentPage>

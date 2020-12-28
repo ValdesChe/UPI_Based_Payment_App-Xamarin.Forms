@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UPIBasedPaymentApp.Views;
 using Xamarin.Forms;
 
 namespace UPIBasedPaymentApp.ViewModel.Base
@@ -24,10 +25,23 @@ namespace UPIBasedPaymentApp.ViewModel.Base
             set => SetProperty(ref _IsBusy, value);
         }
 
-        public async Task NavigateToHomePage()
+        /***
+         *  Navgate to homepage
+         **/
+        public async Task NavigateToMainPage()
         {
             NavigationParameters np = new NavigationParameters();
-            await _NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(HomePage)}");
+            await _NavigationService.NavigateAsync($"{nameof(MainPage)}", np);
+        }
+
+
+        /***
+         *  Navgate to homepage
+         **/
+        public async Task NavigateToGenerateQrCodePage()
+        {
+            NavigationParameters np = new NavigationParameters();
+            await _NavigationService.NavigateAsync($"{nameof(GenerateCodePage)}", np) ;
         }
     }
 }
