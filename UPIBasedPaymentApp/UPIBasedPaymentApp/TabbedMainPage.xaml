@@ -4,7 +4,25 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:pages="clr-namespace:UPIBasedPaymentApp.Views.Page"
+             xmlns:local="clr-namespace:UPIBasedPaymentApp.Extensions"
+             android:TabbedPage.IsSmoothScrollEnabled="False"
+             android:TabbedPage.IsSwipePagingEnabled="False"
              x:Class="UPIBasedPaymentApp.TabbedMainPage"
              NavigationPage.HasNavigationBar="False">
-
+    <TabbedPage.Children>
+        <pages:NotificationPage 
+            Title="Notifications"
+            IconImageSource="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.notification.png}"/>
+        
+        <pages:HomePage 
+            x:Name="homePage"
+            Title="Home"
+            IconImageSource="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.home.png}"/>
+        
+        <pages:SettingPage 
+            Title="Settings"
+            IconImageSource="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.settings.png}"/>
+    </TabbedPage.Children>
 </TabbedPage>

@@ -1,11 +1,10 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Prism.Navigation.TabbedPages;
 using System.Threading.Tasks;
 using UPIBasedPaymentApp.Views;
+using UPIBasedPaymentApp.Views.Page;
 using Xamarin.Forms;
 
 namespace UPIBasedPaymentApp.ViewModel.Base
@@ -25,8 +24,10 @@ namespace UPIBasedPaymentApp.ViewModel.Base
             set => SetProperty(ref _IsBusy, value);
         }
 
+        #region Navigate
+
         /***
-         *  Navgate to homepage
+         *  Navigate to homepage
          **/
         public async Task NavigateToMainPage()
         {
@@ -34,14 +35,25 @@ namespace UPIBasedPaymentApp.ViewModel.Base
             await _NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}", np);
         }
 
+        /***
+         *  Navigate to homepage
+         **/
+        public async Task NavigateBackToHomePage()
+        {
+            NavigationParameters np = new NavigationParameters();
+            await _NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}", np);
+        }
+
 
         /***
-         *  Navgate to homepage
+         *  Navigate to generate Qr code page
          **/
         public async Task NavigateToGenerateQrCodePage()
         {
             NavigationParameters np = new NavigationParameters();
             await _NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}/{nameof(GenerateCodePage)}", np) ;
         }
+
+        #endregion
     }
 }

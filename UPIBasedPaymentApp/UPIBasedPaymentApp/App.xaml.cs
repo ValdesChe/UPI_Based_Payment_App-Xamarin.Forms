@@ -39,6 +39,8 @@ namespace UPIBasedPaymentApp
 
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<GenerateCodePage, GenerateCodePageViewModel>();
+            containerRegistry.RegisterForNavigation<NotificationPage>();
+            containerRegistry.RegisterForNavigation<SettingPage>();
         }
 
         protected override async void OnInitialized()
@@ -69,7 +71,7 @@ namespace UPIBasedPaymentApp
             else
             {
                 // Current.MainPage = new HomePage();
-                result = await NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}");
+                result = await NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}");
             }
 
             if (!result.Success)
