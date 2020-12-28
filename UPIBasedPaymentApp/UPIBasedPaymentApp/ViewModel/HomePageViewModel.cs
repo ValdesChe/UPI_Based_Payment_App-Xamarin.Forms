@@ -14,6 +14,8 @@ namespace UPIBasedPaymentApp.ViewModel
 
         private void GenerateQrCodeCommandExecute()
         {
+            if (IsBusy)
+                return;
             IsBusy = true;
             GoToGenerateQrCodePage();
             IsBusy = false;        

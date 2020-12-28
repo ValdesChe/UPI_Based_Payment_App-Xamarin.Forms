@@ -18,6 +18,8 @@ namespace UPIBasedPaymentApp.ViewModel
 
         private void LoginCommandExecute()
         {
+            if (IsBusy)
+                return;
             IsBusy = true;
             GoToHomePage();
             IsBusy = false;
