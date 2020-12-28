@@ -15,10 +15,13 @@
     <None Remove="Resources\Fonts\SourceSansPro-Regular.ttf" />
     <None Remove="Resources\Icons\bankAccount.png" />
     <None Remove="Resources\Icons\batchReport.png" />
+    <None Remove="Resources\Icons\generatedQrCode.png" />
     <None Remove="Resources\Icons\home.png" />
     <None Remove="Resources\Icons\notification.png" />
     <None Remove="Resources\Icons\paymentReceived.png" />
+    <None Remove="Resources\Icons\save.png" />
     <None Remove="Resources\Icons\settings.png" />
+    <None Remove="Resources\Icons\share.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,13 +29,16 @@
     <EmbeddedResource Include="Resources\Fonts\SourceSansPro-Regular.ttf" />
     <EmbeddedResource Include="Resources\Icons\bankAccount.png" />
     <EmbeddedResource Include="Resources\Icons\batchReport.png" />
+    <EmbeddedResource Include="Resources\Icons\generatedQrCode.png" />
     <EmbeddedResource Include="Resources\Icons\home.png" />
     <EmbeddedResource Include="Resources\Icons\notification.png" />
     <EmbeddedResource Include="Resources\Icons\paymentReceived.png" />
     <EmbeddedResource Include="Resources\Icons\qrcode.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Icons\save.png" />
     <EmbeddedResource Include="Resources\Icons\settings.png" />
+    <EmbeddedResource Include="Resources\Icons\share.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,14 +4,51 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:local="clr-namespace:UPIBasedPaymentApp.Extensions"
              x:Class="UPIBasedPaymentApp.Views.GenerateCodePage"
              BackgroundColor="AliceBlue"
              Title="Generate Qr Code">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Generate Code !"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.RowSpan="3"
+                HeightRequest="200"
+                WidthRequest="200"
+                Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.generatedQrCode.png}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+            <FlexLayout Grid.Row="3" Direction="Row" JustifyContent="SpaceAround">
+                <StackLayout HeightRequest="26" Padding="2">
+                    <Image Grid.Row="0" Grid.RowSpan="3"
+                        HeightRequest="20"
+                        WidthRequest="20"
+                        Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.share.png}"
+                        VerticalOptions="Center" />   
+                    <Label Text="Share my code"
+                   Style="{StaticResource MontserratRegularLabelStyle}"
+                    />
+                </StackLayout>
+
+                <StackLayout HeightRequest="26" Padding="2">
+                    <Image
+                        HeightRequest="20"
+                        WidthRequest="20"
+                        Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.save.png}"
+                        VerticalOptions="Center" />
+                    <Label Text="Save to photo"
+                   Style="{StaticResource MontserratRegularLabelStyle}"
+                    />
+                </StackLayout>
+                
+            </FlexLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
