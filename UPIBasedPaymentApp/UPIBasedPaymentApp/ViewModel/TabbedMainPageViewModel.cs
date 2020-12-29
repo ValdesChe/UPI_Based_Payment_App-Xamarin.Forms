@@ -5,9 +5,11 @@ namespace UPIBasedPaymentApp.ViewModel
 {
     public class TabbedMainPageViewModel : BaseViewModel
     {
+
+
         public TabbedMainPageViewModel(INavigationService navigationService):base(navigationService)
         {
-
+            
         }
 
     }

@@ -5,13 +5,46 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:pages="clr-namespace:UPIBasedPaymentApp.Views"
+             xmlns:settings="clr-namespace:UPIBasedPaymentApp.Views.Settings"
              NavigationPage.HasNavigationBar="False"
              x:Class="UPIBasedPaymentApp.Views.Page.SettingPage">
+    <pages:BaseContentPage.Resources>
+
+        <DataTemplate x:Key="groupTemplate"
+                          x:DataType="settings:SettingsPageListItem">
+            <StackLayout Orientation="Horizontal">
+                <BoxView
+                       StyleClass="list-section-separator-top, list-section-separator-top-platform"
+                                         />
+
+                <Label Text="{Binding Icon, Mode=OneWay}"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"/>
+                <Label Text="{Binding Name, Mode=OneWay}"
+                         LineBreakMode="TailTruncation"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="CenterAndExpand"
+                         Style="{StaticResource MediumLabelStyle}"/>
+                <Label Text=">"
+                         FontSize="Medium"
+                         HorizontalOptions="End"
+                         VerticalOptions="CenterAndExpand"
+                         HorizontalTextAlignment="End"
+                         StyleClass="list-sub"/>
+            </StackLayout>
+        </DataTemplate>
+    </pages:BaseContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Settings page!"
+            <Label Text="Accounts"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+
+            <CollectionView 
+                    ItemsSource="{Binding GroupedItems}"
+                    VerticalOptions="FillAndExpand"
+                    ItemTemplate="{StaticResource groupTemplate}" />
         </StackLayout>
     </ContentPage.Content>
 </pages:BaseContentPage>

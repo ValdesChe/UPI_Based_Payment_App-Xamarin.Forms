@@ -40,7 +40,7 @@ namespace UPIBasedPaymentApp
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<GenerateCodePage, GenerateCodePageViewModel>();
             containerRegistry.RegisterForNavigation<NotificationPage>();
-            containerRegistry.RegisterForNavigation<SettingPage>();
+            containerRegistry.RegisterForNavigation<SettingPage, SettingPageViewModel>();
         }
 
         protected override async void OnInitialized()

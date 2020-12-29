@@ -105,12 +105,12 @@
                 <Setter Property="FontSize"
                         Value="{StaticResource HugeSize}" />
             </Style>
-            
-            <Style x:Key="EventNameLabelStyle"  
+
+            <Style x:Key="MediumLabelStyle"  
                    TargetType="{x:Type Label}"   
                    BasedOn="{StaticResource MontserratRegularLabelStyle}">
                 <Setter Property="TextColor"
-                        Value="{StaticResource BlueColor}" />
+                        Value="{StaticResource BlackColor}" />
                 <Setter Property="FontSize" 
                         Value="{StaticResource MediumSize}" />
             </Style>
