@@ -7,16 +7,16 @@
              xmlns:pages="clr-namespace:UPIBasedPaymentApp.Views"
              xmlns:fa="clr-namespace:UPIBasedPaymentApp.Utilities"
              xmlns:settings="clr-namespace:UPIBasedPaymentApp.Views.Settings"
-             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasNavigationBar="True"
+             BackgroundColor="{StaticResource BackgroundGrayColor}"
              x:Class="UPIBasedPaymentApp.Views.Page.SettingPage">
     <pages:BaseContentPage.Resources>
-
         <DataTemplate x:Key="groupTemplate"
-                          x:DataType="settings:SettingsPageListItem">
-            <Grid>
+            x:DataType="settings:SettingsPageListItem">
+            <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1" />
-                    <RowDefinition Height="80" />
+                    <RowDefinition Height="55" />
                 </Grid.RowDefinitions>
 
                 <BoxView Grid.Row="0"
@@ -25,6 +25,7 @@
                     <Image
                     WidthRequest="20"
                     HeightRequest="20"
+                    Margin="15,0"
                     HorizontalOptions="Start"
                     VerticalOptions="Center">
                         <Image.Source>
@@ -62,15 +63,24 @@
     </pages:BaseContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="15" VerticalOptions="Start">
             <Label Text="Accounts"
+                Margin="30,10"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="Start" 
+                Style="{StaticResource MediumLabelStyle}"
+                FontSize="{StaticResource LargerSize}" />
 
-            <CollectionView 
+            <Frame 
+                CornerRadius="10"
+                Padding="10,0"
+                HeightRequest="230"
+                BackgroundColor="{StaticResource WhiteColor}">
+                <CollectionView 
                     ItemsSource="{Binding GroupedItems}"
                     VerticalOptions="FillAndExpand"
                     ItemTemplate="{StaticResource groupTemplate}" />
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </pages:BaseContentPage>
