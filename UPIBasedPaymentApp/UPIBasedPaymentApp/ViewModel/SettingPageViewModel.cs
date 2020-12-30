@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UPIBasedPaymentApp.Enum;
+using UPIBasedPaymentApp.Utilities;
 using UPIBasedPaymentApp.ViewModel.Base;
 using UPIBasedPaymentApp.Views.Settings;
 
@@ -29,28 +30,28 @@ namespace UPIBasedPaymentApp.ViewModel
             groupedItems.Add(new SettingsPageListItem()
             {
                 Name = "My profile",
-                Icon = "prof.png",
+                Icon = FaIcons.Account,
                 Type = SettingsType.PROFILE_EDIT
             });
 
             groupedItems.Add(new SettingsPageListItem()
             {
                 Name = "Changes password",
-                Icon = "changepass.png",
+                Icon = FaIcons.LockAlert,
                 Type = SettingsType.PASSWORD_EDIT
             });
 
             groupedItems.Add(new SettingsPageListItem()
             {
                 Name = "Changes language",
-                Icon = "changelang.png",
+                Icon = FaIcons.GoogleTranslate,
                 Type = SettingsType.LANGUAGE_EDIT
             });
 
             groupedItems.Add(new SettingsPageListItem()
             {
                 Name = "Terms and conditions",
-                Icon = "termscond.png",
+                Icon = FaIcons.ShieldHalfFull,
                 Type = SettingsType.TERMS_COND_EDIT
             });
 

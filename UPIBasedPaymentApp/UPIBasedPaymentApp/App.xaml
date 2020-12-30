@@ -17,14 +17,42 @@
             <Color x:Key="BlackColor">#000000</Color>
             <Color x:Key="GreenColor">#4cd137</Color>
 
+
+            <!-- Icons -->
+            <x:String x:Key="IconChevronLeft">&#xf142;</x:String>
+            <x:String x:Key="IconDownload">&#xf1da;</x:String>
+            <x:String x:Key="IconShare">&#xf497;</x:String>
+            <x:String x:Key="IconSettings">&#xf8ba;</x:String>
+            <x:String x:Key="IconClose">&#xf156;</x:String>
+
+
+            <FontImageSource
+                x:Key="ChevronLeftIcon"
+                FontFamily="{DynamicResource MaterialFontFamily}"
+                Glyph="{StaticResource IconChevronLeft}"
+                Size="40"
+                Color="{StaticResource BlueColor}"/>
+
+            <FontImageSource
+                x:Key="CloseIcon"
+                FontFamily="{DynamicResource MaterialFontFamily}"
+                Glyph="{StaticResource IconClose}"
+                Size="15"
+                Color="{StaticResource BlueColor}"/>
+
             <!-- Fonts -->
+            <OnPlatform x:Key="MaterialFontFamily" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Material Design Icons" />
+                <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons" />
+            </OnPlatform>
+
             <OnPlatform x:Key="MontserratRegular"
                         x:TypeArguments="x:String"
-                        Android="Resources\Fonts\SourceSansPro-Regular.ttf"/>
+                        Android="SourceSansPro-Regular.ttf"/>
 
             <OnPlatform x:Key="MontserratBold"
                         x:TypeArguments="x:String"
-                        Android="Resources\Fonts\Montserrat-Bold.ttf" />
+                        Android="Montserrat-Bold.ttf" />
 
             <!-- Font Sizes -->
             <OnPlatform x:Key="LittleSize"
@@ -78,7 +106,7 @@
                 <Setter Property="FontFamily"
                  Value="{StaticResource MontserratRegular}" />
             </Style>
-            
+
             <Style x:Key="MontserratBoldLabelStyle"
                    TargetType="{x:Type Label}"
                    BasedOn="{StaticResource BaseLabelStyle}">
@@ -145,7 +173,7 @@
                 <Setter Property="Margin"
                         Value="0,12" />
             </Style>
-            
+
             <!-- Button Style -->
             <Style x:Key="BaseButtonStyle"
                    TargetType="{x:Type Button}">
@@ -173,6 +201,13 @@
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
 
+            <Style TargetType="BoxView"
+           Class="list-section-separator">
+                <Setter Property="HeightRequest"
+                Value="1" />
+                <Setter Property="Color" 
+                        Value="{StaticResource BackgroundGrayColor}" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

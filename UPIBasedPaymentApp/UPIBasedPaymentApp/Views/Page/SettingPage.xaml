@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:pages="clr-namespace:UPIBasedPaymentApp.Views"
+             xmlns:fa="clr-namespace:UPIBasedPaymentApp.Utilities"
              xmlns:settings="clr-namespace:UPIBasedPaymentApp.Views.Settings"
              NavigationPage.HasNavigationBar="False"
              x:Class="UPIBasedPaymentApp.Views.Page.SettingPage">
@@ -12,26 +13,51 @@
 
         <DataTemplate x:Key="groupTemplate"
                           x:DataType="settings:SettingsPageListItem">
-            <StackLayout Orientation="Horizontal">
-                <BoxView
-                       StyleClass="list-section-separator-top, list-section-separator-top-platform"
-                                         />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="80" />
+                </Grid.RowDefinitions>
 
-                <Label Text="{Binding Icon, Mode=OneWay}"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Center"/>
-                <Label Text="{Binding Name, Mode=OneWay}"
+                <BoxView Grid.Row="0"
+                    StyleClass="list-section-separator"/>
+                <StackLayout Grid.Row="1" Orientation="Horizontal">
+                    <Image
+                    WidthRequest="20"
+                    HeightRequest="20"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource
+                            FontFamily="{StaticResource MaterialFontFamily}"
+                            Glyph="{Binding Icon, Mode=OneWay}"
+                            Size="20"
+                            Color="{StaticResource GrayColor}" />
+                        </Image.Source>
+                    </Image>
+
+                    <Label Text="{Binding Name, Mode=OneWay}"
                          LineBreakMode="TailTruncation"
                          HorizontalOptions="FillAndExpand"
                          VerticalOptions="CenterAndExpand"
                          Style="{StaticResource MediumLabelStyle}"/>
-                <Label Text=">"
-                         FontSize="Medium"
-                         HorizontalOptions="End"
-                         VerticalOptions="CenterAndExpand"
-                         HorizontalTextAlignment="End"
-                         StyleClass="list-sub"/>
-            </StackLayout>
+
+                    <Image
+                    Grid.Column="2"
+                    HeightRequest="30"
+                    HorizontalOptions="End"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="30">
+                        <Image.Source>
+                            <FontImageSource
+                            FontFamily="{StaticResource MaterialFontFamily}"
+                            Glyph="{x:Static fa:FaIcons.ChevronRight}"
+                            Size="20"
+                            Color="{StaticResource GrayColor}" />
+                        </Image.Source>
+                    </Image>
+                </StackLayout>
+            </Grid>
         </DataTemplate>
     </pages:BaseContentPage.Resources>
     
