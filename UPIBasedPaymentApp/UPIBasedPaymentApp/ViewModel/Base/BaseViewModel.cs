@@ -1,10 +1,9 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Navigation;
-using Prism.Navigation.TabbedPages;
 using System.Threading.Tasks;
 using UPIBasedPaymentApp.Views;
 using UPIBasedPaymentApp.Views.Page;
+using UPIBasedPaymentApp.Views.Settings;
 using Xamarin.Forms;
 
 namespace UPIBasedPaymentApp.ViewModel.Base
@@ -52,6 +51,14 @@ namespace UPIBasedPaymentApp.ViewModel.Base
         {
             NavigationParameters np = new NavigationParameters();
             await _NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}/{nameof(GenerateCodePage)}", np) ;
+        }
+
+        /***
+         *  Navigate to Profile Settings Page
+         **/
+        public async Task NavigateToProfileSettingsPage()
+        {
+            await _NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}/{nameof(ProfileSettingsPage)}") ;
         }
 
         #endregion

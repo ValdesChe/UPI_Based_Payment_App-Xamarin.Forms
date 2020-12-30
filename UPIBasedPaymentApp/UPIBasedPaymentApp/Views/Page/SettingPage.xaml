@@ -79,6 +79,8 @@
                 <CollectionView 
                     ItemsSource="{Binding GroupedItems}"
                     VerticalOptions="FillAndExpand"
+                    SelectionMode="Single"
+                    SelectedItem="{Binding SelectedSettingsPageItem}"
                     ItemTemplate="{StaticResource groupTemplate}" />
             </Frame>
         </StackLayout>

@@ -16,7 +16,6 @@ namespace UPIBasedPaymentApp
                     Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Bottom);
             }
 
-            CurrentPage = homePage;
         }
 
         protected override void OnAppearing()

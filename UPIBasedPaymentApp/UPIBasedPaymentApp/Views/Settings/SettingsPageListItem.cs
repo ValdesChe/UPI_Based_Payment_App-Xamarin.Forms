@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using UPIBasedPaymentApp.Enum;
 
 namespace UPIBasedPaymentApp.Views.Settings
 {
-    public class SettingsPageListItem
+    public class SettingsPageListItem: BindableBase
     {
         private string _icon;
         private string _name;

@@ -14,6 +14,7 @@ namespace UPIBasedPaymentApp.ViewModel
     {
         #region Props
         private ObservableCollection<SettingsPageListItem> _GroupedItems;
+        private SettingsPageListItem _SelectedSettingsPageItem;
         #endregion
 
         public SettingPageViewModel(INavigationService navigationService):base(navigationService)
@@ -57,6 +58,7 @@ namespace UPIBasedPaymentApp.ViewModel
 
             GroupedItems = new ObservableCollection<SettingsPageListItem>(groupedItems);
         }
+
         #endregion
 
 
@@ -69,10 +71,29 @@ namespace UPIBasedPaymentApp.ViewModel
             IsBusy = false;
         }
 
+
+        #region Navigation
+
         private async void GoBack()
         {
             await NavigateBackToHomePage();
         }
+
+
+        private async void NavigateToMenuItemPage(SettingsType? type)
+        {
+            switch (type)
+            {
+                case SettingsType.PROFILE_EDIT:
+                    await NavigateToProfileSettingsPage();
+                    break;
+                default:
+                    await NavigateToProfileSettingsPage();
+                    break;
+            }
+        }
+
+        #endregion
 
 
         #region Commands
@@ -85,7 +106,19 @@ namespace UPIBasedPaymentApp.ViewModel
 
 
         #region Fields
+
         public ObservableCollection<SettingsPageListItem> GroupedItems { get => _GroupedItems; set => SetProperty(ref _GroupedItems, value); }
+        
+        public SettingsPageListItem SelectedSettingsPageItem {
+            get => _SelectedSettingsPageItem;
+            set {
+                SetProperty(ref _SelectedSettingsPageItem, value);
+                if (value == null)
+                    return;
+                NavigateToMenuItemPage(value.Type);
+            }
+        }
+
         #endregion
     }
 }

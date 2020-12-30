@@ -12,6 +12,7 @@ using UPIBasedPaymentApp.Services;
 using UPIBasedPaymentApp.Views.Authentication;
 using UPIBasedPaymentApp.Views;
 using UPIBasedPaymentApp.Views.Page;
+using UPIBasedPaymentApp.Views.Settings;
 
 namespace UPIBasedPaymentApp
 {
@@ -40,7 +41,9 @@ namespace UPIBasedPaymentApp
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<GenerateCodePage, GenerateCodePageViewModel>();
             containerRegistry.RegisterForNavigation<NotificationPage>();
+
             containerRegistry.RegisterForNavigation<SettingPage, SettingPageViewModel>();
+            containerRegistry.RegisterForNavigation<ProfileSettingsPage>();
         }
 
         protected override async void OnInitialized()
