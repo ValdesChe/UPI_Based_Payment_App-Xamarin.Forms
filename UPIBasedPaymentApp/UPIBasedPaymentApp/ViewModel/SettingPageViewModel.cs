@@ -101,6 +101,7 @@ namespace UPIBasedPaymentApp.ViewModel
                 if (value == null)
                     return;
                 NavigateToMenuItemPage(value.Type);
+                SelectedSettingsPageItem = null;
             }
         }
 

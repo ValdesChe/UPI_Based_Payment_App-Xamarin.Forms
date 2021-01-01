@@ -70,7 +70,7 @@ namespace UPIBasedPaymentApp.ViewModel.Base
          **/
         public async Task NavigateToProfileSettingsPage()
         {
-            await _NavigationService.NavigateAsync($"{nameof(ProfileSettingsPage)}") ;
+            await _NavigationService.NavigateAsync($"{nameof(ProfileSettingsPage)}");
         }
 
         #endregion
