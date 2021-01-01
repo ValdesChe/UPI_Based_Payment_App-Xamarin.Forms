@@ -46,13 +46,13 @@ namespace UPIBasedPaymentApp.ViewModel.Base
             await _NavigationService.NavigateAsync($"/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}", np);
         }
 
-        /***
-         *  Navigate to homepage
-         **/
-        public async Task NavigateBackToHomePage()
+        /// <summary>
+        /// Navigate to Bank account page
+        /// </summary>
+        /// <returns></returns>
+        public async Task NavigateToBankAccountPage()
         {
-            NavigationParameters np = new NavigationParameters();
-            await _NavigationService.NavigateAsync($"/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}", np);
+            await _NavigationService.NavigateAsync($"{nameof(BankAccountPage)}");
         }
 
 

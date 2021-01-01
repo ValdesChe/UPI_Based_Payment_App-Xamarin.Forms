@@ -153,7 +153,7 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame Grid.Column="2"  CornerRadius="20">
+                <Frame Grid.Column="2" CornerRadius="20">
                     <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
                         <Image 
                             Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.bankAccount.png}"
@@ -167,6 +167,9 @@
                            TextColor="{StaticResource BlackColor}" />
 
                     </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BankAccountCommand}" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
                 </Frame>
             </Grid>
         </Grid>

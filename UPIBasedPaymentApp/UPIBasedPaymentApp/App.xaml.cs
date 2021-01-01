@@ -41,6 +41,7 @@ namespace UPIBasedPaymentApp
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<GenerateCodePage, GenerateCodePageViewModel>();
             containerRegistry.RegisterForNavigation<NotificationPage>();
+            containerRegistry.RegisterForNavigation<BankAccountPage>();
 
             containerRegistry.RegisterForNavigation<SettingPage, SettingPageViewModel>();
             containerRegistry.RegisterForNavigation<ProfileSettingsPage>();

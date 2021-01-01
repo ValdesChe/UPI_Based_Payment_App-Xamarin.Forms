@@ -10,8 +10,18 @@ namespace UPIBasedPaymentApp.ViewModel
         public HomePageViewModel(INavigationService navigationService):base(navigationService)
         {
             GenerateQrCodeCommand = new DelegateCommand(GenerateQrCodeCommandExecute);
+            BankAccountCommand = new DelegateCommand(BankAccountCommandExecute);
         }
 
+        private void BankAccountCommandExecute()
+        {
+            if (IsBusy)
+                return;
+            IsBusy = true;
+            GoToBankAccountPage();
+            IsBusy = false;        
+        }
+        
         private void GenerateQrCodeCommandExecute()
         {
             if (IsBusy)
@@ -26,7 +36,18 @@ namespace UPIBasedPaymentApp.ViewModel
             await NavigateToGenerateQrCodePage();
         }
 
+
+        private async void GoToBankAccountPage()
+        {
+            await NavigateToBankAccountPage();
+        }
+
         public DelegateCommand GenerateQrCodeCommand
+        {
+            get; private set;
+        }
+
+        public DelegateCommand BankAccountCommand
         {
             get; private set;
         }
