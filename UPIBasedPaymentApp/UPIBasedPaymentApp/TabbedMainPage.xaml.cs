@@ -1,4 +1,6 @@
-﻿using UPIBasedPaymentApp.Views.Page;
+﻿using System;
+using UPIBasedPaymentApp.Extensions;
+using UPIBasedPaymentApp.Views.Page;
 using Xamarin.Forms;
 
 namespace UPIBasedPaymentApp
@@ -18,9 +20,27 @@ namespace UPIBasedPaymentApp
 
         }
 
+        internal void ResetToHomePage()
+        {
+            CurrentPage = homePage;
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
+        }
+
+        protected override void OnCurrentPageChanged()
+        {
+            if (CurrentPage is HomePage homePage)
+            {
+                NavigationPage.SetHasNavigationBar(this, false);
+            }
+            else
+            {
+                NavigationPage.SetHasNavigationBar(this, true);
+                NavigationPage.SetHasBackButton(this, true);
+            }
         }
     }
 }

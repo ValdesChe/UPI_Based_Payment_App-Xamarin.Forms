@@ -4,6 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="UPIBasedPaymentApp.Views.Authentication.LoginPage"
              NavigationPage.HasNavigationBar="False">
     <Grid RowSpacing="0" BackgroundColor="{StaticResource WhiteColor}">

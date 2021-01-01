@@ -69,18 +69,19 @@ namespace UPIBasedPaymentApp
             {
                 await _PreferencesService.SaveAsync(AppSettings.IsFirstTimeAppLaunched, false);
                 // Current.MainPage = new LoginPage();
-                result = await NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(LoginPage)}");
+                result = await NavigationService.NavigateAsync($"/{nameof(LoginPage)}");
             }
             else
             {
-                // Current.MainPage = new HomePage();
-                result = await NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}");
+                // Current.MainPage = new TabbedMainPage();
+                result = await NavigationService.NavigateAsync($"/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}");
             }
 
             if (!result.Success)
             {
                 SetMainPageFromException(result.Exception);
             }
+
         }
 
 
