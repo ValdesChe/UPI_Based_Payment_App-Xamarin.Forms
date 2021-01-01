@@ -7,10 +7,104 @@
              Title="Profile Setting"
              x:Class="UPIBasedPaymentApp.Views.Settings.ProfileSettingsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Profile Setting"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Spacing="0" Padding="15,20" Margin="0" HorizontalOptions="FillAndExpand">
+
+                <!-- -->
+                <Label Text="Your name" 
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+                <Entry Text="" Placeholder="" Keyboard="Text" 
+                           Style="{StaticResource ProfileSettingsFormEntryStyle}" />
+
+                <!-- Mobile -->
+                <Label Text="Mobile number" 
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+                <Entry Text="" Placeholder="" Keyboard="Telephone"
+                           Style="{StaticResource ProfileSettingsFormEntryStyle}" />
+
+                <!-- Email -->
+                <Label Text="Email ID" 
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+                <Entry Text="" Placeholder="" Keyboard="Email" 
+                           Style="{StaticResource ProfileSettingsFormEntryStyle}" />
+
+                <!-- Website -->
+                <Label Text="Website" 
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+                <Entry Text="" Placeholder="" Keyboard="Email" 
+                           Style="{StaticResource ProfileSettingsFormEntryStyle}" />
+
+                <!-- Address -->
+                <Label Text="Merchand Address" 
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+                <Entry Text="" Placeholder="" 
+                           Style="{StaticResource ProfileSettingsFormEntryStyle}" />
+                <!-- Country -->
+                <Label Text="Merchand Country" 
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+                <Entry Text="" Placeholder=""
+                           Style="{StaticResource ProfileSettingsFormEntryStyle}" />
+
+                <!-- Login Id -->
+                <Label Text="Merchand Login Id" 
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+                <Entry Text="" Placeholder="" 
+                           Style="{StaticResource ProfileSettingsFormEntryStyle}" />
+
+                <!-- UPI Id -->
+                <Label Text="Enter UPI Id" 
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+                <Entry Text="" Placeholder="" 
+                           Style="{StaticResource ProfileSettingsFormEntryStyle}" />
+
+                <!-- Gender -->
+                <Label Text="Gender"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox />
+                    <Label Text="Male" VerticalTextAlignment="Center"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+
+
+                    <CheckBox IsChecked="True" />
+                    <Label Text="Female" VerticalTextAlignment="Center"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
+                           FontSize="{StaticResource LittleSize}"  
+                           TextColor="{StaticResource GrayColor}" />
+
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
