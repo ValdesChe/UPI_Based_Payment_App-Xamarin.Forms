@@ -5,8 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="My Bank Account"
+             xmlns:local="clr-namespace:UPIBasedPaymentApp.Extensions"
              x:Class="UPIBasedPaymentApp.Views.BankAccountPage">
-    <ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Search"
+                     AutomationProperties.IsInAccessibleTree="True"
+                     AutomationProperties.Name="Search" />
+    </ContentPage.ToolbarItems>
+            <ContentPage.Content>
         <StackLayout>
             <Label Text="My Bank account page!"
                 VerticalOptions="CenterAndExpand" 

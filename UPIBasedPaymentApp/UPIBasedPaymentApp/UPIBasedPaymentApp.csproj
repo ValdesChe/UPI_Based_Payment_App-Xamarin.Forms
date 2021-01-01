@@ -20,6 +20,7 @@
     <None Remove="Resources\Icons\notification.png" />
     <None Remove="Resources\Icons\paymentReceived.png" />
     <None Remove="Resources\Icons\save.png" />
+    <None Remove="Resources\Icons\search.png" />
     <None Remove="Resources\Icons\settings.png" />
     <None Remove="Resources\Icons\share.png" />
   </ItemGroup>
@@ -37,6 +38,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Icons\save.png" />
+    <EmbeddedResource Include="Resources\Icons\search.png" />
     <EmbeddedResource Include="Resources\Icons\settings.png" />
     <EmbeddedResource Include="Resources\Icons\share.png" />
   </ItemGroup>
