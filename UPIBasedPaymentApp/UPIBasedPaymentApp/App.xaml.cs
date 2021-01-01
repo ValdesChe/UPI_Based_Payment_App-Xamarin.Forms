@@ -74,7 +74,7 @@ namespace UPIBasedPaymentApp
             else
             {
                 // Current.MainPage = new TabbedMainPage();
-                result = await NavigationService.NavigateAsync($"/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}");
+                result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}");
             }
 
             if (!result.Success)

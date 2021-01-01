@@ -9,5 +9,8 @@ namespace UPIBasedPaymentApp
         public const string IsFirstTimeAppLaunched = "IsFirstTimeAppLaunched";
         public const bool IsFirstTimeAppLaunchedDefaultValue = true;
 
+        public const string HomePage = "Home";
+        public const string SettingsPage = "Settings";
+        public const string NotificationPage = "Notifications";
     }
 }

@@ -12,15 +12,5 @@ namespace UPIBasedPaymentApp.Views
             InitializeComponent();
         }
 
-
-        protected override bool OnBackButtonPressed()
-        {
-            GenerateCodePageViewModel _vm = BindingContext as GenerateCodePageViewModel;
-            if (_vm != null) {
-                _vm.BackToCommand.Execute();
-                return true;
-            }
-            return base.OnBackButtonPressed();
-        }
     }
 }

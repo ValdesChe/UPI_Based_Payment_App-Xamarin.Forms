@@ -62,7 +62,7 @@ namespace UPIBasedPaymentApp.ViewModel.Base
         public async Task NavigateToGenerateQrCodePage()
         {
             NavigationParameters np = new NavigationParameters();
-            await _NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}/{nameof(GenerateCodePage)}", np) ;
+            await _NavigationService.NavigateAsync($"{nameof(GenerateCodePage)}", np) ;
         }
 
         /***
@@ -70,7 +70,7 @@ namespace UPIBasedPaymentApp.ViewModel.Base
          **/
         public async Task NavigateToProfileSettingsPage()
         {
-            await _NavigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}/{nameof(ProfileSettingsPage)}") ;
+            await _NavigationService.NavigateAsync($"{nameof(ProfileSettingsPage)}") ;
         }
 
         #endregion

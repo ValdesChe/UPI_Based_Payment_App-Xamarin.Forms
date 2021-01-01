@@ -9,28 +9,20 @@
              xmlns:local="clr-namespace:UPIBasedPaymentApp.Extensions"
              android:TabbedPage.IsSmoothScrollEnabled="False"
              android:TabbedPage.IsSwipePagingEnabled="False"
+             Title="{Binding Title}"
+             SelectedTabIndex="{Binding SelectedTab}"
              x:Class="UPIBasedPaymentApp.TabbedMainPage">
-    <NavigationPage x:Name="notifPage" 
+    <TabbedPage.Children>
+        <pages:NotificationPage  x:Name="notifPage" 
             Title="Notifications"
-            IconImageSource="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.notification.png}">
-        <x:Arguments>
-            <pages:NotificationPage />
-        </x:Arguments>
-    </NavigationPage>
+            IconImageSource="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.notification.png}" />
 
-    <NavigationPage x:Name="homePage" 
+        <pages:HomePage x:Name="homePage" 
             Title="Home"
-            IconImageSource="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.home.png}">
-        <x:Arguments>
-            <pages:HomePage />
-        </x:Arguments>
-    </NavigationPage>
+            IconImageSource="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.home.png}" />
 
-    <NavigationPage x:Name="settingPage" 
+        <pages:SettingPage x:Name="settingPage" 
             Title="Settings"
-            IconImageSource="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.settings.png}">
-        <x:Arguments>
-            <pages:SettingPage />
-        </x:Arguments>
-    </NavigationPage>
+            IconImageSource="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.settings.png}"/>
+    </TabbedPage.Children>
 </TabbedPage>

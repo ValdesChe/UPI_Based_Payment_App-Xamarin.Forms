@@ -1,6 +1,5 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UPIBasedPaymentApp.Enum;
@@ -19,7 +18,6 @@ namespace UPIBasedPaymentApp.ViewModel
 
         public SettingPageViewModel(INavigationService navigationService):base(navigationService)
         {
-            BackToCommand = new DelegateCommand(BackToCommandExecute);
             BuildMenuItems();
         }
 
@@ -62,22 +60,9 @@ namespace UPIBasedPaymentApp.ViewModel
         #endregion
 
 
-        private void BackToCommandExecute()
-        {
-            if (IsBusy)
-                return;
-            IsBusy = true;
-            GoBack();
-            IsBusy = false;
-        }
 
 
         #region Navigation
-
-        private async void GoBack()
-        {
-            await NavigateBackToHomePage();
-        }
 
 
         private async void NavigateToMenuItemPage(SettingsType? type)
