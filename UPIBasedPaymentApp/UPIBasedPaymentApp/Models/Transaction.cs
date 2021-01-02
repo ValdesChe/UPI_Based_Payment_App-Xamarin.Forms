@@ -8,7 +8,7 @@ namespace UPIBasedPaymentApp.Models
         public string Name { get; set; }
         public TransactionType Type { get; set; }
         public CurrencyType Currency { get; set; }
-        public float Amount { get; set; }
+        public double Amount { get; set; }
         public DateTime Date { get; set; }
     }
 }
