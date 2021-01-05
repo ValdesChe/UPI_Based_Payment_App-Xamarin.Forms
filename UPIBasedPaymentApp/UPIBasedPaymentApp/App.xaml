@@ -17,6 +17,7 @@
             <Color x:Key="ProfileGrayColor">#afb3be</Color>
             <Color x:Key="BlackColor">#000000</Color>
             <Color x:Key="GreenColor">#4cd137</Color>
+            <Color x:Key="DarGreenColor">#38a62e</Color>
 
 
             <!-- Icons -->

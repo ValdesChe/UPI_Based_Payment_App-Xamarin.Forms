@@ -129,7 +129,7 @@
                             <Label Text="{Binding Amount}" 
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center"
-                                           TextColor="{StaticResource GreenColor}"
+                                           TextColor="{StaticResource DarGreenColor}"
                                            Style="{StaticResource MontserratBoldLabelStyle}"
                                            FontSize="{StaticResource LargerSize}"  />
 
@@ -158,11 +158,11 @@
                                         FontFamily="{DynamicResource MaterialFontFamily}"
                                         Glyph="{Binding Icon}"
                                         Size="60"
-                                        Color="{StaticResource GreenColor}" />
+                                        Color="{StaticResource DarGreenColor}" />
                                 </Image.Source>
                             </Image>
-                            <Label Text="{Binding Type}" TextColor="{StaticResource GreenColor}"
-                                           HorizontalOptions="Center" VerticalOptions="Center" />
+                            <Label Text="{Binding Type}" TextColor="{StaticResource DarGreenColor}"
+                                    FontSize="{StaticResource LittleSize}" HorizontalOptions="Center" VerticalOptions="Center" />
                         </StackLayout>
 
                         <Label Text="{Binding HourMinute}" Opacity="0.5" 
