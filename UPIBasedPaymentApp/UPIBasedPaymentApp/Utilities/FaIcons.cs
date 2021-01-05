@@ -8,5 +8,7 @@ namespace UPIBasedPaymentApp.Utilities
         public const string GoogleTranslate = "\uf2bf";
         public const string ShieldHalfFull = "\uf77f";
         public const string ChevronRight = "\uf142";
+        public const string BankTransferIn = "\ufa27";
+        public const string BankTransferOut = "\ufa28";
     }
 }
