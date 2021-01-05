@@ -13,6 +13,7 @@ using UPIBasedPaymentApp.Views.Authentication;
 using UPIBasedPaymentApp.Views;
 using UPIBasedPaymentApp.Views.Page;
 using UPIBasedPaymentApp.Views.Settings;
+using UPIBasedPaymentApp.Services.Mocks;
 
 namespace UPIBasedPaymentApp
 {
@@ -32,6 +33,7 @@ namespace UPIBasedPaymentApp
         {
             // Register Services
             containerRegistry.RegisterSingleton<IStorageService, PreferencesService>();
+            containerRegistry.Register<ITransactionService, TransactionMockService>();
 
             // Register Navigation Pages + ViewModels
             containerRegistry.RegisterForNavigation<NavigationPage>();
@@ -41,7 +43,7 @@ namespace UPIBasedPaymentApp
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<GenerateCodePage, GenerateCodePageViewModel>();
             containerRegistry.RegisterForNavigation<NotificationPage>();
-            containerRegistry.RegisterForNavigation<BankAccountPage>();
+            containerRegistry.RegisterForNavigation<BankAccountPage, BankAccountPageViewModel>();
 
             containerRegistry.RegisterForNavigation<SettingPage, SettingPageViewModel>();
             containerRegistry.RegisterForNavigation<ProfileSettingsPage>();

@@ -8,7 +8,7 @@ namespace UPIBasedPaymentApp.Services.Mocks
 {
     public class TransactionMockService : ITransactionService
     {
-        public async Task<IList<Transaction>> GetTransactions()
+        public async Task<List<Transaction>> GetTransactions()
         {
             await Task.Delay(20);
 

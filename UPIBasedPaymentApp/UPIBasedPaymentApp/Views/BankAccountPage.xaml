@@ -12,11 +12,115 @@
                      AutomationProperties.IsInAccessibleTree="True"
                      AutomationProperties.Name="Search" />
     </ContentPage.ToolbarItems>
-            <ContentPage.Content>
+    <ContentPage.Content>
         <StackLayout>
-            <Label Text="My Bank account page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame Margin="10,15"
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="{StaticResource TransparentGrayColor}"
+                   CornerRadius="10">
+                <Label Style="{StaticResource MontserratBoldLabelStyle}"
+                       FontSize="{Binding LargerSize}"
+                       HorizontalTextAlignment="Center"
+                       Text="Check Your Balance Here" />
+            </Frame>
+
+            <ListView 
+                      RowHeight="90" 
+                      SeparatorVisibility="None" >
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>mono</x:String>
+                        <x:String>monodroid</x:String>
+                        <x:String>monotouch</x:String>
+                        <x:String>monorail</x:String>
+                        <x:String>monodevelop</x:String>
+                        <x:String>monotone</x:String>
+                        <x:String>monopoly</x:String>
+                        <x:String>monomodal</x:String>
+                        <x:String>mononucleosis</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10,5" 
+                                  BackgroundColor="{StaticResource BackgroundGrayColor}" 
+                                  RowSpacing="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35" />
+                                    <RowDefinition Height="25" />
+                                    <RowDefinition Height="25" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Binding Nam dd ddzd eede zd zdz df ddffe" LineBreakMode="TailTruncation"
+                                       Grid.ColumnSpan="4" FontSize="{StaticResource MediumSize}"
+                                       HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                                       Grid.Row="0" Grid.Column="0" />
+
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="End"
+                                       VerticalOptions="Center" Grid.ColumnSpan="2"
+                                       Grid.Row="0" Grid.Column="4">
+
+                                    <Label Text="-120.5" 
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           TextColor="{StaticResource BlueColor}"
+                                           Style="{StaticResource MontserratBoldLabelStyle}"
+                                           FontSize="{StaticResource LargerSize}"  />
+
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End"
+                                       VerticalOptions="Center" Grid.ColumnSpan="2" HeightRequest="20">
+                                        <Frame CornerRadius="15" BackgroundColor="Transparent" 
+                                           Padding="5,0"
+                                           BorderColor="{StaticResource BlueColor}">
+                                            <Label Text="EURO" Style="{StaticResource MontserratBoldLabelStyle}"
+                                               FontSize="{StaticResource LittlerSize}"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               TextColor="{StaticResource BlueColor}" />
+                                        </Frame>
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3"
+                                       Grid.Row="1" Grid.Column="0" Spacing="2">
+                                    <Image
+                                        HeightRequest="50"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+                                        <Image.Source>
+                                            <FontImageSource
+                                                FontFamily="{DynamicResource MaterialFontFamily}"
+                                                Glyph="{StaticResource IconClose}"
+                                                Size="50"
+                                                Color="{StaticResource ErrorColor}" />
+                                        </Image.Source>
+                                    </Image>
+                                    <Label Text="Debit" TextColor="{StaticResource ErrorColor}"
+                                           HorizontalOptions="Center" VerticalOptions="Center" />
+                                </StackLayout>
+
+                                <Label Text="10:00 AM" Opacity="0.5" HorizontalTextAlignment="End" Grid.ColumnSpan="2"
+                                       Style="{StaticResource MontserratRegularLabelStyle}"
+                                       FontSize="{StaticResource LittlerSize}"
+                                       TextColor="{StaticResource GrayColor}"
+                                       Grid.Row="1" Grid.Column="4" />
+
+                                <BoxView Grid.ColumnSpan="6" HeightRequest="60" Grid.Row="2" Grid.Column="0"
+                                         Color="{StaticResource TransparentWhiteColor}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

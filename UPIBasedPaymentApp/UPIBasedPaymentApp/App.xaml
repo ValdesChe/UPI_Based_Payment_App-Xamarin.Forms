@@ -10,6 +10,7 @@
             <Color x:Key="TransparentWhiteColor">#BFffffff</Color>
             <Color x:Key="BlueColor">#3FA9F5</Color>
             <Color x:Key="TransparentBlueColor">#9ee9f5</Color>
+            <Color x:Key="TransparentGrayColor">#B2CED3</Color>
             <Color x:Key="GrayColor">#484f63</Color>
             <Color x:Key="ErrorColor">#ff5252</Color>
             <Color x:Key="BackgroundGrayColor">#f4f6fa</Color>
@@ -55,6 +56,12 @@
                         Android="Montserrat-Bold.ttf" />
 
             <!-- Font Sizes -->
+            <OnPlatform x:Key="LittlerSize"
+                        x:TypeArguments="x:Double"
+                        iOS="10"
+                        Android="11"
+                        WinPhone="11"/>
+            
             <OnPlatform x:Key="LittleSize"
                         x:TypeArguments="x:Double"
                         iOS="12"
@@ -66,6 +73,13 @@
                         iOS="14"
                         Android="16"
                         WinPhone="16"/>
+
+
+            <OnPlatform x:Key="LargeSize"
+                        x:TypeArguments="x:Double"
+                        iOS="14"
+                        Android="18"
+                        WinPhone="18"/>
 
             <OnPlatform x:Key="LargerSize"
                         x:TypeArguments="x:Double"
@@ -112,6 +126,8 @@
                    BasedOn="{StaticResource BaseLabelStyle}">
                 <Setter Property="FontFamily"
                         Value="{StaticResource MontserratBold}" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
             </Style>
 
             <Style x:Key="HeaderBoldLabelStyle"

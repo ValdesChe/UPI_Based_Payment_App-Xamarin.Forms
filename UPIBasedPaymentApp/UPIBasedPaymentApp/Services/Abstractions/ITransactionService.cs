@@ -10,6 +10,6 @@ namespace UPIBasedPaymentApp.Services.Abstractions
         /// Fetch the transactions
         /// </summary>
         /// <returns></returns>
-        Task<IList<Transaction>> GetTransactions();
+        Task<List<Transaction>> GetTransactions();
     }
 }
