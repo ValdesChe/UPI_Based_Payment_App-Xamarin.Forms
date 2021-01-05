@@ -5,12 +5,185 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="My Bank Account"
+             xmlns:models="clr-namespace:UPIBasedPaymentApp.Models"
+             xmlns:dataselector="clr-namespace:UPIBasedPaymentApp.Views.Selectors"
              x:Class="UPIBasedPaymentApp.Views.BankAccountPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Search"
                      AutomationProperties.IsInAccessibleTree="True"
                      AutomationProperties.Name="Search" />
     </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="debitTemplate"
+                          x:DataType="models:Transaction">
+                <ViewCell>
+                    <Grid Padding="10,5" 
+                                  BackgroundColor="{StaticResource BackgroundGrayColor}" 
+                                  RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                       Grid.ColumnSpan="4" FontSize="{StaticResource MediumSize}"
+                                       HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                                       Grid.Row="0" Grid.Column="0" />
+
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End"
+                                       VerticalOptions="Center" Grid.ColumnSpan="2"
+                                       Grid.Row="0" Grid.Column="4">
+
+                            <Label Text="{Binding Amount}" 
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           TextColor="{StaticResource BlueColor}"
+                                           Style="{StaticResource MontserratBoldLabelStyle}"
+                                           FontSize="{StaticResource LargerSize}"  />
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="End"
+                                       VerticalOptions="Center" Grid.ColumnSpan="2" HeightRequest="20">
+                                <Frame CornerRadius="15" BackgroundColor="Transparent" 
+                                           Padding="5,0"
+                                           BorderColor="{StaticResource BlueColor}">
+                                    <Label Text="{Binding Currency}" Style="{StaticResource MontserratBoldLabelStyle}"
+                                               FontSize="{StaticResource LittlerSize}"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               TextColor="{StaticResource BlueColor}" />
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3"
+                                       Grid.Row="1" Grid.Column="0" Spacing="2">
+                            <Image
+                                        HeightRequest="60"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource
+                                                FontFamily="{DynamicResource MaterialFontFamily}"
+                                                Glyph="{Binding Icon}"
+                                                Size="60"
+                                                Color="{StaticResource ErrorColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Text="{Binding Type}" TextColor="{StaticResource ErrorColor}"
+                                           HorizontalOptions="Center" VerticalOptions="Center" />
+                        </StackLayout>
+
+                        <Label Text="{Binding HourMinute}" Opacity="0.5" 
+                                       HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+                                       Grid.ColumnSpan="2"
+                                       Style="{StaticResource MontserratRegularLabelStyle}"
+                                       FontSize="{StaticResource LittlerSize}"
+                                       TextColor="{StaticResource GrayColor}"
+                                       Grid.Row="1" Grid.Column="4" />
+
+                        <BoxView Grid.ColumnSpan="6" HeightRequest="60" Margin="0,10,0,0" Grid.Row="2" Grid.Column="0"
+                                        Color="{StaticResource TransparentWhiteColor}" />
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+
+            <DataTemplate x:Key="creditTemplate"
+                          x:DataType="models:Transaction">
+                <ViewCell>
+                    <Grid Padding="10,5" 
+                                  BackgroundColor="{StaticResource BackgroundGrayColor}" 
+                                  RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="25" />
+                            <RowDefinition Height="25" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                       Grid.ColumnSpan="4" FontSize="{StaticResource MediumSize}"
+                                       HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                                       Grid.Row="0" Grid.Column="0" />
+
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End"
+                                       VerticalOptions="Center" Grid.ColumnSpan="2"
+                                       Grid.Row="0" Grid.Column="4">
+
+                            <Label Text="{Binding Amount}" 
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           TextColor="{StaticResource GreenColor}"
+                                           Style="{StaticResource MontserratBoldLabelStyle}"
+                                           FontSize="{StaticResource LargerSize}"  />
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="End"
+                                       VerticalOptions="Center" Grid.ColumnSpan="2" HeightRequest="20">
+                                <Frame CornerRadius="15" BackgroundColor="Transparent" 
+                                           Padding="5,0"
+                                           BorderColor="{StaticResource BlueColor}">
+                                    <Label Text="{Binding Currency}" Style="{StaticResource MontserratBoldLabelStyle}"
+                                               FontSize="{StaticResource LittlerSize}"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               TextColor="{StaticResource BlueColor}" />
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3"
+                                       Grid.Row="1" Grid.Column="0" Spacing="2">
+                            <Image
+                                        HeightRequest="60"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource
+                                        FontFamily="{DynamicResource MaterialFontFamily}"
+                                        Glyph="{Binding Icon}"
+                                        Size="60"
+                                        Color="{StaticResource GreenColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Text="{Binding Type}" TextColor="{StaticResource GreenColor}"
+                                           HorizontalOptions="Center" VerticalOptions="Center" />
+                        </StackLayout>
+
+                        <Label Text="{Binding HourMinute}" Opacity="0.5" 
+                                       HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+                                       Grid.ColumnSpan="2"
+                                       Style="{StaticResource MontserratRegularLabelStyle}"
+                                       FontSize="{StaticResource LittlerSize}"
+                                       TextColor="{StaticResource GrayColor}"
+                                       Grid.Row="1" Grid.Column="4" />
+
+                        <BoxView Grid.ColumnSpan="6" HeightRequest="60" Margin="0,10,0,0" Grid.Row="2" Grid.Column="0"
+                                        Color="{StaticResource TransparentWhiteColor}" />
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+
+            <dataselector:TransactionTemplateSelector x:Key="listTransactionDataTemplateSelector"
+                CreditTemplate="{StaticResource creditTemplate}"
+                DebitTemplate="{StaticResource debitTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <Frame Margin="10,15"
@@ -25,90 +198,8 @@
 
             <ListView ItemsSource="{Binding Transactions}"
                 RowHeight="90"
-                SeparatorVisibility="None" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="10,5" 
-                                  BackgroundColor="{StaticResource BackgroundGrayColor}" 
-                                  RowSpacing="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="35" />
-                                    <RowDefinition Height="25" />
-                                    <RowDefinition Height="25" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-
-                                <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
-                                       Grid.ColumnSpan="4" FontSize="{StaticResource MediumSize}"
-                                       HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
-                                       Grid.Row="0" Grid.Column="0" />
-
-
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="End"
-                                       VerticalOptions="Center" Grid.ColumnSpan="2"
-                                       Grid.Row="0" Grid.Column="4">
-
-                                    <Label Text="{Binding Amount}" 
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           TextColor="{StaticResource BlueColor}"
-                                           Style="{StaticResource MontserratBoldLabelStyle}"
-                                           FontSize="{StaticResource LargerSize}"  />
-
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End"
-                                       VerticalOptions="Center" Grid.ColumnSpan="2" HeightRequest="20">
-                                        <Frame CornerRadius="15" BackgroundColor="Transparent" 
-                                           Padding="5,0"
-                                           BorderColor="{StaticResource BlueColor}">
-                                            <Label Text="{Binding Currency}" Style="{StaticResource MontserratBoldLabelStyle}"
-                                               FontSize="{StaticResource LittlerSize}"
-                                               HorizontalTextAlignment="Center"
-                                               VerticalTextAlignment="Center"
-                                               TextColor="{StaticResource BlueColor}" />
-                                        </Frame>
-                                    </StackLayout>
-                                </StackLayout>
-
-                                <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3"
-                                       Grid.Row="1" Grid.Column="0" Spacing="2">
-                                    <Image
-                                        HeightRequest="60"
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Center">
-                                        <Image.Source>
-                                            <FontImageSource
-                                                FontFamily="{DynamicResource MaterialFontFamily}"
-                                                Glyph="{Binding Icon}"
-                                                Size="60"
-                                                Color="{StaticResource ErrorColor}" />
-                                        </Image.Source>
-                                    </Image>
-                                    <Label Text="{Binding Type}" TextColor="{StaticResource ErrorColor}"
-                                           HorizontalOptions="Center" VerticalOptions="Center" />
-                                </StackLayout>
-
-                                <Label Text="{Binding HourMinute}" Opacity="0.5" 
-                                       HorizontalTextAlignment="End" VerticalTextAlignment="Center"
-                                       Grid.ColumnSpan="2"
-                                       Style="{StaticResource MontserratRegularLabelStyle}"
-                                       FontSize="{StaticResource LittlerSize}"
-                                       TextColor="{StaticResource GrayColor}"
-                                       Grid.Row="1" Grid.Column="4" />
-
-                                <BoxView Grid.ColumnSpan="6" HeightRequest="60" Margin="0,10,0,0" Grid.Row="2" Grid.Column="0"
-                                        Color="{StaticResource TransparentWhiteColor}" />
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                ItemTemplate="{StaticResource listTransactionDataTemplateSelector}"
+                SeparatorVisibility="None" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
