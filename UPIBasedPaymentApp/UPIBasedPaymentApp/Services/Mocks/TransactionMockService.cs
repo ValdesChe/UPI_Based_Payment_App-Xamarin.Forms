@@ -10,7 +10,7 @@ namespace UPIBasedPaymentApp.Services.Mocks
     {
         public async Task<List<Transaction>> GetTransactions()
         {
-            await Task.Delay(20);
+            await Task.Delay(2);
 
             var transactions = new List<Transaction>();
             transactions.Add(new Transaction()

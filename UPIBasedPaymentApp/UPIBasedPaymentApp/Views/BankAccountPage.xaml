@@ -5,7 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="My Bank Account"
-             xmlns:local="clr-namespace:UPIBasedPaymentApp.Extensions"
              x:Class="UPIBasedPaymentApp.Views.BankAccountPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Search"
@@ -24,22 +23,9 @@
                        Text="Check Your Balance Here" />
             </Frame>
 
-            <ListView 
-                      RowHeight="90" 
-                      SeparatorVisibility="None" >
-                <ListView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>mono</x:String>
-                        <x:String>monodroid</x:String>
-                        <x:String>monotouch</x:String>
-                        <x:String>monorail</x:String>
-                        <x:String>monodevelop</x:String>
-                        <x:String>monotone</x:String>
-                        <x:String>monopoly</x:String>
-                        <x:String>monomodal</x:String>
-                        <x:String>mononucleosis</x:String>
-                    </x:Array>
-                </ListView.ItemsSource>
+            <ListView ItemsSource="{Binding Transactions}"
+                RowHeight="90"
+                SeparatorVisibility="None" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -59,7 +45,7 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Label Text="Binding Nam dd ddzd eede zd zdz df ddffe" LineBreakMode="TailTruncation"
+                                <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
                                        Grid.ColumnSpan="4" FontSize="{StaticResource MediumSize}"
                                        HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
                                        Grid.Row="0" Grid.Column="0" />
@@ -69,7 +55,7 @@
                                        VerticalOptions="Center" Grid.ColumnSpan="2"
                                        Grid.Row="0" Grid.Column="4">
 
-                                    <Label Text="-120.5" 
+                                    <Label Text="{Binding Amount}" 
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center"
                                            TextColor="{StaticResource BlueColor}"
@@ -81,7 +67,7 @@
                                         <Frame CornerRadius="15" BackgroundColor="Transparent" 
                                            Padding="5,0"
                                            BorderColor="{StaticResource BlueColor}">
-                                            <Label Text="EURO" Style="{StaticResource MontserratBoldLabelStyle}"
+                                            <Label Text="{Binding Currency}" Style="{StaticResource MontserratBoldLabelStyle}"
                                                FontSize="{StaticResource LittlerSize}"
                                                HorizontalTextAlignment="Center"
                                                VerticalTextAlignment="Center"
@@ -104,7 +90,7 @@
                                                 Color="{StaticResource ErrorColor}" />
                                         </Image.Source>
                                     </Image>
-                                    <Label Text="Debit" TextColor="{StaticResource ErrorColor}"
+                                    <Label Text="{Binding Type}" TextColor="{StaticResource ErrorColor}"
                                            HorizontalOptions="Center" VerticalOptions="Center" />
                                 </StackLayout>
 
@@ -115,7 +101,7 @@
                                        Grid.Row="1" Grid.Column="4" />
 
                                 <BoxView Grid.ColumnSpan="6" HeightRequest="60" Grid.Row="2" Grid.Column="0"
-                                         Color="{StaticResource TransparentWhiteColor}" />
+                                        Color="{StaticResource TransparentWhiteColor}" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

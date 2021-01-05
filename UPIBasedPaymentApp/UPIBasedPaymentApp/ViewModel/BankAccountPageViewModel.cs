@@ -41,7 +41,7 @@ namespace UPIBasedPaymentApp.ViewModel
 
         #region Props
 
-        ObservableCollection<Transaction> Transactions
+        public ObservableCollection<Transaction> Transactions
         {
             get => _Transactions;
             set => SetProperty(ref _Transactions, value);
