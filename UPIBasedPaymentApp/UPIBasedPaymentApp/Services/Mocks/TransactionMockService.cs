@@ -26,12 +26,20 @@ namespace UPIBasedPaymentApp.Services.Mocks
             transactions.Add(new Transaction()
             {
                 Name = "Aurion : Legacy of the Kori-Adan payment via Kingui Cash - Kiroo Game",
-                Amount = -125.75,
+                Amount = 125.75,
                 Currency = Enum.CurrencyType.GBP,
-                Type = Enum.TransactionType.DEBIT,
+                Type = Enum.TransactionType.CREDIT,
                 Date = new System.DateTime()
             });
 
+            transactions.Add(new Transaction()
+            {
+                Name = "Payment Salaire Nabulos Engineering - Mois Janvier 2021",
+                Amount = 3072.50,
+                Currency = Enum.CurrencyType.GBP,
+                Type = Enum.TransactionType.CREDIT,
+                Date = new System.DateTime(2021, 1, 31, 14, 23, 20)
+            });
 
             transactions.Add(new Transaction()
             {
@@ -55,9 +63,9 @@ namespace UPIBasedPaymentApp.Services.Mocks
             transactions.Add(new Transaction()
             {
                 Name = "Payment Assurance habitation Credit Mutuel",
-                Amount = -15.5,
+                Amount = 15.5,
                 Currency = Enum.CurrencyType.GBP,
-                Type = Enum.TransactionType.DEBIT,
+                Type = Enum.TransactionType.CREDIT,
                 Date = new System.DateTime(2020, 2, 17, 12, 23, 20)
             });
 
@@ -70,6 +78,35 @@ namespace UPIBasedPaymentApp.Services.Mocks
                 Type = Enum.TransactionType.DEBIT,
                 Date = new System.DateTime(2020, 2, 17, 12, 23, 20)
             });
+
+            transactions.Add(new Transaction()
+            {
+                Name = "Payment Taxe AMBACAM",
+                Amount = -15.0,
+                Currency = Enum.CurrencyType.GBP,
+                Type = Enum.TransactionType.DEBIT,
+                Date = new System.DateTime(2020, 4, 19, 14, 23, 20)
+            });
+            
+            transactions.Add(new Transaction()
+            {
+                Name = "Payment Salaire BOOMIT - Mois Avril 2020",
+                Amount = 2735.0,
+                Currency = Enum.CurrencyType.GBP,
+                Type = Enum.TransactionType.CREDIT,
+                Date = new System.DateTime(2020, 4, 19, 14, 23, 20)
+            });
+
+            transactions.Add(new Transaction()
+            {
+                Name = "Paiement facture Hyper-marché SANTA LUCIA Yaounde",
+                Amount = -48.0,
+                Currency = Enum.CurrencyType.GBP,
+                Type = Enum.TransactionType.DEBIT,
+                Date = new System.DateTime(2020, 4, 12, 12, 03, 11)
+            });
+
+
             return transactions;
         }
     }
