@@ -1,5 +1,6 @@
 ﻿using Prism.Mvvm;
 using System;
+using System.Globalization;
 using UPIBasedPaymentApp.Enum;
 
 namespace UPIBasedPaymentApp.Models
@@ -11,5 +12,7 @@ namespace UPIBasedPaymentApp.Models
         public CurrencyType Currency { get; set; }
         public double Amount { get; set; }
         public DateTime Date { get; set; }
+
+        public string HourMinute { get => Date.ToString("hh:mm tt", CultureInfo.InvariantCulture); }
     }
 }

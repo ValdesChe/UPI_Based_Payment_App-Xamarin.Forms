@@ -94,7 +94,7 @@
                                            HorizontalOptions="Center" VerticalOptions="Center" />
                                 </StackLayout>
 
-                                <Label Text="10:00 AM" Opacity="0.5" HorizontalTextAlignment="End" Grid.ColumnSpan="2"
+                                <Label Text="{Binding HourMinute}" Opacity="0.5" HorizontalTextAlignment="End" Grid.ColumnSpan="2"
                                        Style="{StaticResource MontserratRegularLabelStyle}"
                                        FontSize="{StaticResource LittlerSize}"
                                        TextColor="{StaticResource GrayColor}"
