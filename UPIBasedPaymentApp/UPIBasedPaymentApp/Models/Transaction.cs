@@ -32,5 +32,15 @@ namespace UPIBasedPaymentApp.Models
             }
         }
         public string HourMinute { get => Date.ToString("hh:mm tt", CultureInfo.InvariantCulture); }
+        public string DateString { 
+            get{
+                if (Date == null)
+                    return "-";
+                if (Date.Date == DateTime.Now.Date)
+                    return "Today";
+
+                return Date.ToString("D", CultureInfo.CreateSpecificCulture("en-US"));
+            } 
+        }
     }
 }

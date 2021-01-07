@@ -11,5 +11,10 @@ namespace UPIBasedPaymentApp.Services.Abstractions
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<Transaction>> GetTransactions();
+        /// <summary>
+        /// Fetch the transactions group by transaction's date
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<TransactionItemGroup>> GetTransactionsGroupByDate();
     }
 }

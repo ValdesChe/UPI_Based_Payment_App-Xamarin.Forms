@@ -14,7 +14,7 @@ namespace UPIBasedPaymentApp.ViewModel
     public class BankAccountPageViewModel : BaseViewModel
     {
         protected readonly ITransactionService _TransactionService;
-        public ObservableCollection<Transaction> _Transactions;
+        public ObservableCollection<TransactionItemGroup> _Transactions;
 
 
         #region Constructor
@@ -33,15 +33,15 @@ namespace UPIBasedPaymentApp.ViewModel
         
         public async void FetchTransactions()
         {
-            var transactions = await _TransactionService.GetTransactions();
-            Transactions = new ObservableCollection<Transaction>(transactions);
+            var transactions = await _TransactionService.GetTransactionsGroupByDate();
+            Transactions = new ObservableCollection<TransactionItemGroup>(transactions);
         }
 
         #endregion
 
         #region Props
 
-        public ObservableCollection<Transaction> Transactions
+        public ObservableCollection<TransactionItemGroup> Transactions
         {
             get => _Transactions;
             set => SetProperty(ref _Transactions, value);

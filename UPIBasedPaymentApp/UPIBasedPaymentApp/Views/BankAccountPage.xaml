@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="My Bank Account"
+             BackgroundColor="{StaticResource WhiteColor}"
              xmlns:models="clr-namespace:UPIBasedPaymentApp.Models"
              xmlns:dataselector="clr-namespace:UPIBasedPaymentApp.Views.Selectors"
              x:Class="UPIBasedPaymentApp.Views.BankAccountPage">
@@ -18,13 +19,13 @@
             <DataTemplate x:Key="debitTemplate"
                           x:DataType="models:Transaction">
                 <ViewCell>
-                    <Grid Padding="10,5" 
-                                  BackgroundColor="{StaticResource BackgroundGrayColor}" 
-                                  RowSpacing="0">
+                    <Grid Padding="10,0" 
+                        BackgroundColor="{StaticResource BackgroundGrayColor}" 
+                        RowSpacing="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="35" />
-                            <RowDefinition Height="25" />
-                            <RowDefinition Height="25" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="10" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -35,6 +36,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                       TextColor="{StaticResource GrayColor}"
                                        Grid.ColumnSpan="4" FontSize="{StaticResource MediumSize}"
                                        HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
                                        Grid.Row="0" Grid.Column="0" />
@@ -65,17 +67,18 @@
                             </StackLayout>
                         </StackLayout>
 
-                        <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3"
+                        <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3"  VerticalOptions="Start"
                                        Grid.Row="1" Grid.Column="0" Spacing="2">
                             <Image
-                                        HeightRequest="60"
+                                        HeightRequest="30"
+                                        WidthRequest="30"
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center">
                                 <Image.Source>
                                     <FontImageSource
                                                 FontFamily="{DynamicResource MaterialFontFamily}"
                                                 Glyph="{Binding Icon}"
-                                                Size="60"
+                                                Size="30"
                                                 Color="{StaticResource ErrorColor}" />
                                 </Image.Source>
                             </Image>
@@ -91,7 +94,7 @@
                                        TextColor="{StaticResource GrayColor}"
                                        Grid.Row="1" Grid.Column="4" />
 
-                        <BoxView Grid.ColumnSpan="6" HeightRequest="60" Margin="0,10,0,0" Grid.Row="2" Grid.Column="0"
+                        <BoxView Grid.ColumnSpan="6" Grid.Row="2" Grid.Column="0"
                                         Color="{StaticResource TransparentWhiteColor}" />
                     </Grid>
                 </ViewCell>
@@ -100,13 +103,13 @@
             <DataTemplate x:Key="creditTemplate"
                           x:DataType="models:Transaction">
                 <ViewCell>
-                    <Grid Padding="10,5" 
-                                  BackgroundColor="{StaticResource BackgroundGrayColor}" 
-                                  RowSpacing="0">
+                    <Grid Padding="10,0" 
+                          BackgroundColor="{StaticResource BackgroundGrayColor}" 
+                          RowSpacing="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="35" />
-                            <RowDefinition Height="25" />
-                            <RowDefinition Height="25" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="10" />
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -117,6 +120,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Text="{Binding Name}" LineBreakMode="TailTruncation"
+                                       TextColor="{StaticResource GrayColor}"
                                        Grid.ColumnSpan="4" FontSize="{StaticResource MediumSize}"
                                        HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
                                        Grid.Row="0" Grid.Column="0" />
@@ -147,17 +151,18 @@
                             </StackLayout>
                         </StackLayout>
 
-                        <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3"
+                        <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3" VerticalOptions="Start"
                                        Grid.Row="1" Grid.Column="0" Spacing="2">
                             <Image
-                                        HeightRequest="60"
+                                        HeightRequest="30"
+                                        WidthRequest="30"
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center">
                                 <Image.Source>
                                     <FontImageSource
                                         FontFamily="{DynamicResource MaterialFontFamily}"
                                         Glyph="{Binding Icon}"
-                                        Size="60"
+                                        Size="30"
                                         Color="{StaticResource DarGreenColor}" />
                                 </Image.Source>
                             </Image>
@@ -173,7 +178,7 @@
                                        TextColor="{StaticResource GrayColor}"
                                        Grid.Row="1" Grid.Column="4" />
 
-                        <BoxView Grid.ColumnSpan="6" HeightRequest="60" Margin="0,10,0,0" Grid.Row="2" Grid.Column="0"
+                        <BoxView Grid.ColumnSpan="6" Grid.Row="2" Grid.Column="0"
                                         Color="{StaticResource TransparentWhiteColor}" />
                     </Grid>
                 </ViewCell>
@@ -197,9 +202,25 @@
             </Frame>
 
             <ListView ItemsSource="{Binding Transactions}"
-                RowHeight="90"
+                IsGroupingEnabled="True"
+                HasUnevenRows="True"
+                BackgroundColor="{StaticResource WhiteColor}"      
                 ItemTemplate="{StaticResource listTransactionDataTemplateSelector}"
-                SeparatorVisibility="None" />
+                SeparatorVisibility="None">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate x:DataType="models:TransactionItemGroup">
+                        <ViewCell>
+                            <Label Text="{Binding Name}"
+                                   Padding="10,15"
+                                   HorizontalTextAlignment="Start"
+                                   Opacity="0.7"
+                                   Style="{StaticResource MontserratRegularLabelStyle}"
+                                   FontSize="{StaticResource LargeSize}"
+                                   TextColor="{StaticResource GrayColor}"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
