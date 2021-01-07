@@ -88,8 +88,7 @@ namespace UPIBasedPaymentApp
                 NavigationPage.SetHasNavigationBar(this, true);
             }
 
-            if(!_isFirstTimeAppearance)
-                SelectedTabIndex = this.Children.IndexOf(this.CurrentPage);
+            SelectedTabIndex = this.Children.IndexOf(this.CurrentPage);
         }
     }
 }
