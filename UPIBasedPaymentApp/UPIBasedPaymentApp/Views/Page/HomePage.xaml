@@ -40,7 +40,7 @@
                 BackgroundColor="{StaticResource WhiteColor}"
                 CornerRadius="20" HasShadow="True"
                 Padding="0">
-                <StackLayout Padding="30,10" Margin="0" HorizontalOptions="FillAndExpand">
+                <StackLayout Padding="30,10" Spacing="0" Margin="0" HorizontalOptions="FillAndExpand">
                     <Image 
                         Source="{local:ImageResource UPIBasedPaymentApp.Resources.Icons.qrcode.png}"
                         HeightRequest="50" WidthRequest="50"
@@ -54,7 +54,7 @@
 
                     <Label Text="Enter amount" 
                            HorizontalOptions="Start"
-                           Style="{StaticResource MontserratRegularLabelStyle}"
+                           Style="{StaticResource MontserratBoldLabelStyle}"
                            FontSize="{StaticResource LittleSize}"  
                            TextColor="{StaticResource BlueColor}" />
 
@@ -72,7 +72,7 @@
                         </Grid.RowDefinitions>
 
                         <!-- Amount -->
-                        <Label Text="Enter amount" Grid.Column="0" Grid.Row="0"
+                        <Label Text="Result amount" Grid.Column="0" Grid.Row="0"
                            HorizontalOptions="Start"
                            Style="{StaticResource MontserratBoldLabelStyle}"
                            FontSize="{StaticResource LittleSize}"  
@@ -109,7 +109,7 @@
 
                     </Grid>
 
-                    <Button Text="GENERATE QR CODE" Command="{Binding GenerateQrCodeCommand}" Style="{StaticResource LoginButtonStyle}" Margin="0,20" />
+                    <Button Text="GENERATE QR CODE" Command="{Binding GenerateQrCodeCommand}" Style="{StaticResource LoginButtonStyle}" Margin="0,25" />
 
                 </StackLayout>
             </Frame>
