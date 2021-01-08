@@ -1,6 +1,5 @@
 ﻿using System;
 using UPIBasedPaymentApp.Enum;
-using UPIBasedPaymentApp.Extensions;
 using UPIBasedPaymentApp.Views.Page;
 using Xamarin.Forms;
 

@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UPIBasedPaymentApp.Enum;
@@ -9,7 +10,7 @@ using UPIBasedPaymentApp.Views.Settings;
 
 namespace UPIBasedPaymentApp.ViewModel
 {
-    public class SettingPageViewModel : BaseViewModel
+    public class SettingPageViewModel : TabbedPageBaseViewModel
     {
         #region Props
         private ObservableCollection<SettingsPageListItem> _GroupedItems;
@@ -18,7 +19,15 @@ namespace UPIBasedPaymentApp.ViewModel
 
         public SettingPageViewModel(INavigationService navigationService):base(navigationService)
         {
-            BuildMenuItems();
+            IsActiveChanged += HandleIsActiveTrue;
+        }
+
+        private void HandleIsActiveTrue(object sender, EventArgs e)
+        {
+            if (((TabbedPageBaseViewModel)sender).IsActive)
+            {
+                BuildMenuItems();
+            }
         }
 
 
