@@ -66,17 +66,15 @@ namespace UPIBasedPaymentApp
 
             // Get if first time App launched
             var isFirstTimeLaunched = await _PreferencesService.GetAsync<bool>(AppSettings.IsFirstTimeAppLaunched, AppSettings.IsFirstTimeAppLaunchedDefaultValue);
-            
+
             INavigationResult result = null;
             if (isFirstTimeLaunched)
             {
                 await _PreferencesService.SaveAsync(AppSettings.IsFirstTimeAppLaunched, false);
-                // Current.MainPage = new LoginPage();
                 result = await NavigationService.NavigateAsync($"/{nameof(LoginPage)}");
             }
             else
             {
-                // Current.MainPage = new TabbedMainPage();
                 result = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(TabbedMainPage)}?{KnownNavigationParameters.SelectedTab}={nameof(HomePage)}");
             }
 

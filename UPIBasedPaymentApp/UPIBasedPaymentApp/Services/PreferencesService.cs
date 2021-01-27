@@ -31,7 +31,7 @@ namespace UPIBasedPaymentApp.Services
             }
             else if (objType == typeof(bool) || objType == typeof(bool?))
             {
-                var val = Xamarin.Essentials.Preferences.Get(formattedKey, default(bool), _sharedName);
+                var val = Xamarin.Essentials.Preferences.Get(formattedKey, true, _sharedName);
                 return Task.FromResult(ChangeType<T>(val));
             }
             else if (objType == typeof(int) || objType == typeof(int?))
