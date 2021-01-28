@@ -1,4 +1,4 @@
-# UPI Based Payment App using Xamarin.Forms + Prism.Unity
+## UPI Based Payment App using Xamarin.Forms + Prism.Unity
 
 Payment app UI developped using Xamarin.Forms and Prism MVVM library
 
