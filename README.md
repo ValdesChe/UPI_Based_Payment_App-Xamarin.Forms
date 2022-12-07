@@ -2,7 +2,7 @@
 
 Payment app UI developped using Xamarin.Forms and Prism MVVM library
 
-> **Note:** The original design come from [intelegain.com > UPI Based Payment App](https://www.intelegain.com/uxsense/upi-based-payment-app/)
+> **Note:** The original design comes from [intelegain.com > UPI Based Payment App](https://www.intelegain.com/uxsense/upi-based-payment-app/)
 
 ![alt text](https://github.com/ValdesChe/UPI_Based_Payment_App-Xamarin.Forms/blob/main/screen/screen_illustration.png) 
 
@@ -51,4 +51,4 @@ Where you store the custom widgets you'll create
 
 # Author
 
-[@ValdoR >](https://www.twitter.com/Valdes_Che/)
+[< @ValdoR />](https://www.twitter.com/Valdes_Che/)
